@@ -66,11 +66,12 @@ const Planta = () => {
                         <Card className='card-planta-style'>
                             <Text className='text-planta'>Tem como nome científico: Philodendron martianum</Text>
                         </Card>
+                        <div className='planta'>
                         <Image
                             src={planta}
                             preview={false}
                             className='planta'
-                        />
+                        /></div>
                     </Col>
                 </Row>
                 <Row className='container_item' style={{ padding: '0 15px', textAlign: 'justify' }}>

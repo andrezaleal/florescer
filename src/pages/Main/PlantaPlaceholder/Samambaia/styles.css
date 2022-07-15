@@ -32,7 +32,11 @@
 }
 
 .planta {
-    width: 47vw;
+    width: 50vw;
+    justify-content: left !important;
+    text-align : left !important;
+    margin: auto !important;
+    display: block !important;
 }
 
 .icon-collapse {
