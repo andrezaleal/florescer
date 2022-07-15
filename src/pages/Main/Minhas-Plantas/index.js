@@ -8,9 +8,9 @@ import {
     Button,
     Image,
     Card,
-    Tooltip,
+    
 } from 'antd';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './styles.css';
 import { ArrowLeftOutlined, SearchOutlined} from '@ant-design/icons';
 import card_add from "../../../assets/add.png";
@@ -54,13 +54,13 @@ const Catalogo = () => {
                             </Col>
                         </Row>
                         <Row className='container_item' style={{ alignContent: 'center', margin:0 }}>
-                            <Col>
+                           <Link to='/adicionar planta'> <Col>
                                 <Image
                                     src={card_add}
                                     preview={false}
                                     className='card-oval'
                                 />
-                            </Col>
+                            </Col></Link>
                             <Col>
                                 <Image
                                     src={card_oval}

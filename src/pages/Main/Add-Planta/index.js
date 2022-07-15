@@ -10,8 +10,9 @@ import {
     DatePicker,
 } from 'antd';
 import { useHistory } from 'react-router-dom';
+import locale from 'antd/es/date-picker/locale/pt_BR';
 import './styles.css'
-import { ArrowLeftOutlined, DownOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
 import MenuComponent from '../../../components/MenuComponent';
 import cacto from "../../../assets/cacto.png";
@@ -62,21 +63,21 @@ const Planta = () => {
                 </Row>
                 <Row className='container_item' style={{ textAlign: 'left', justifyContent: 'start' }}>
                     <Text style={{ fontSize: '1rem', color: '#6D7970' }}>Idade</Text><br />
-                    <DatePicker
-                        size="large"
-                        placeholder='Selecione uma data'
-                        locale="pt"
-                        dateFormat="dd/MM/yyyy"
-                        style={{
-                            width: '85vw',
-                            color: '#6D7970',
-                            borderRadius: '16px',
-                            border: '1px solid #6D7970',
-                            backgroundColor: 'transparent'
-                        }}
-                    />
+                        <DatePicker
+                            size="large"
+                            placeholder='Selecione uma data'
+                            locale={locale}
+                            moment={'DD-MM-YYYY'}
+                            style={{
+                                width: '85vw',
+                                color: '#6D7970',
+                                borderRadius: '16px',
+                                border: '1px solid #6D7970',
+                                backgroundColor: 'transparent'
+                            }}
+                        />
                 </Row>
-                <Row className='container-item' style={{ marginTop:'2rem', justifyContent: 'center' }}>
+                <Row className='container-item' style={{ marginTop: '2rem', justifyContent: 'center' }}>
                     <Col>
                         <button
                             type="submit"
