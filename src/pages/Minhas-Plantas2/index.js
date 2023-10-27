@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import {
     Layout,
     Typography,
@@ -16,6 +18,7 @@ import { ArrowLeftOutlined, SearchOutlined} from '@ant-design/icons';
 import card_add from "../../../assets/add.png";
 import card_oval from "../../../assets/card-oval.png";
 import "antd/dist/antd.css";
+import MenuComponent from '../../../components/MenuComponent';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -54,6 +57,19 @@ const Catalogo = () => {
                             </Col>
                         </Row>
                         <Row className='container_item' style={{ alignContent: 'center', margin:0 }}>
+<<<<<<< HEAD:src/pages/Minhas-Plantas2/index.js
+                            <Link to ='/adicionar planta'>
+                            <Col>
+                                <Image
+                                    src={card_add}
+                                    preview={false}
+                                    className='card-oval'
+                                />
+                            </Col>
+                            </Link>
+                            <Col>
+                                <Image
+=======
                            <Link to='/adicionar planta'> <Col>
                                 <Image
                                     src={card_add}
@@ -63,6 +79,7 @@ const Catalogo = () => {
                             </Col></Link>
                             <Col>
                                 <Image
+>>>>>>> main:src/pages/Main/Minhas-Plantas/index.js
                                     src={card_oval}
                                     preview={false}
                                     className='card-oval'
@@ -72,7 +89,7 @@ const Catalogo = () => {
                         <Row className='container_item' style={{ margin: '0' }}>
                             <Col>
                                 <Card className="card-categoria" >
-                                    <Text style={{ color: '#6D7970' }}>Cacto juliette</Text>
+                                    <Text style={{ color: '#6D7970' }}></Text>
                                 </Card>
 
                                 <Card className="card-categoria">
@@ -82,7 +99,7 @@ const Catalogo = () => {
                         </Row>
                     </Row>
                 </Row>
-
+<MenuComponent />
             </Content >
 
 

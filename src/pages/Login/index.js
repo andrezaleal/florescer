@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { UserOutlined } from '@ant-design/icons';
 import './styles.css';
 import "antd/dist/antd.css";
+import logo from '../../../assets/logo.png';
 import "../../../fonts/HKGrotesk-Bold.otf";
 import "../../../fonts/HKGrotesk-Regular.otf";
 import "../../../fonts/HKGrotesk-Medium.otf";
@@ -22,6 +23,7 @@ const PaginaInicial = () => {
 
   return (
     <Layout className="layout">
+       <img className="logo" src={logo}/>
         <Title level={2} className='titulo'>Bem-vindo ao Florescer</Title>
         <Content className="site-layout-content">
             <div>

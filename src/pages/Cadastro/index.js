@@ -15,6 +15,11 @@ import "antd/dist/antd.css";
 import "../../../fonts/HKGrotesk-Bold.otf";
 import "../../../fonts/HKGrotesk-Regular.otf";
 import "../../../fonts/HKGrotesk-Medium.otf";
+<<<<<<< HEAD:src/pages/Cadastro/index.js
+import { useAuthentication } from "../../../hooks/useAuthentication";
+import logo from '../../../assets/logo.png';
+=======
+>>>>>>> main:src/pages/Main/Cadastro/index.js
 
 
 const { Title, Text } = Typography;
@@ -22,6 +27,7 @@ const { Content } = Layout;
 const Cadastro = () => {
 return(
     <Layout className="layout">
+        <img className="logo" src={logo}/>
         <Title level={2} className='titulo'>Junte-se ao aplicativo mais completo sobre plantas!</Title>
         <Content className="site-layout-content">
             <div>
