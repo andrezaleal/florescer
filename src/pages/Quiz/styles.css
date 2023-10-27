@@ -43,8 +43,42 @@
     background: #F6F6F6 !important;
 }
 
-@media (max-width: 384px){
-    .img-personagem{
+.text-quiz {
+    color: #6D7970;
+}
+
+.text-button{
+   
+}
+
+.card-opcoes {
+    border: solid 1px #8AB77B;
+    width: 80%;
+    height: auto;
+    margin: 10px 0;
+    background: transparent;
+    padding: 2vw;
+    border-radius: 16px;
+    cursor: pointer;
+    color: #6D7970;
+    white-space: normal !important;
+}
+  
+.card-opcoes:focus-within {
+    background: #75B47B !important;
+    border: solid 1px #75B47B;
+    color: #F6F6F6;
+}
+
+
+@media (max-width: 428px) {
+    .card-opcoes {
+        padding: 3vw;
+    }
+}
+
+@media (max-width: 384px) {
+    .img-personagem {
         width: 17rem;
     }
 }

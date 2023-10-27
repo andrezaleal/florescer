@@ -1,0 +1,299 @@
+.titulo {
+    color: #6D7970 !important;
+    text-align: center;
+    font-weight: bolder !important;
+    font-size: 2.3rem !important;
+}
+
+.container_item {
+    width: 100%;
+    margin: 1vh 0;
+    justify-content: center;
+    display: flex;
+}
+
+.container_item>h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    color: --var(black);
+}
+
+.container_step {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    width: 100%;
+    margin: 3% 0;
+    /* width: 70vw;
+    min-width: 70vh; */
+    /* border: 2px solid #E5E5E5;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: white; */
+}
+
+.ant-typography {
+    font-family: "HKGrotesk-Regular" !important;
+
+}
+
+.icon-card {
+    position: absolute;
+    right: 0;
+    width: 2.5rem !important;
+}
+
+.ant-image {
+    float: right;
+}
+
+.card-title {
+    margin: 0 0 6vh !important;
+    font-size: 2rem !important;
+}
+
+.descricao-card {
+    width: 200px;
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.1rem;
+    margin: 0 0 5vh;
+}
+
+.card-style {
+    padding: 20px;
+    border-radius: 16px !important;
+    display: inline-table !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 48px !important;
+    width: 85vw;
+    height: 27vh;
+    background-repeat: no-repeat !important;
+    background-size: 86vw, 2vh, contain !important;
+}
+
+.card-mini {
+    padding: 20px;
+    border-radius: 16px !important;
+    display: inline-table !important;
+    background-color: transparent !important;
+    border: none !important;
+    width: 30vw;
+    height: 44vh;
+}
+
+.card-mini-legenda {
+    display: inline-table !important;
+    background-color: transparent !important;
+    border: none !important;
+    width: 29vw !important;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0px 7px 0px 0px !important;
+    color: #6D7970 !important;
+}
+
+.ant-card-body {
+    padding: 0 !important;
+}
+
+.site-card-border-less-wrapper {
+    padding: 30px;
+
+}
+
+.site-layout-content {
+    min-height: 280px;
+    padding: 0 24px;
+    justify-content: center;
+    display: flex;
+}
+
+#components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+
+@media (max-width: 1080px) {
+    .card-mini {
+        height: 37vh;
+    }
+}
+
+@media (max-width: 926px) {
+    .card-mini {
+        height: 62vh;
+    }
+}
+
+@media (max-width: 810px) {
+    .card-mini {
+        height: 21vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .card-mini {
+        height: 18vh;
+    }
+
+    .card-style {
+        height: 23vh;
+    }
+}
+
+@media (max-width: 800px) and (orientation:landscape) {
+    .card-mini {
+        height: 62vh;
+    }
+}
+
+@media (max-width: 1280px) and (orientation:landscape) {
+    .card-style {
+        height: 58vh;
+        padding: 70px !important;
+    }
+
+    .descricao-card {
+        width: 300px;
+        font-size: 1.5rem;
+        margin: 0 0 9vh;
+    }
+
+    .titulo {
+        font-size: 2.5rem !important;
+    }
+
+    .card-title {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 1080px) and (orientation:landscape) {
+    .card-style {
+        height: 49vh;
+        padding: 68px !important;
+    }
+
+    .descricao-card {
+        width: 300px;
+        font-size: 1.5rem;
+        margin: 0 0 9vh;
+    }
+
+    .titulo {
+        font-size: 2.5rem !important;
+    }
+
+    .card-title {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 926px) and (orientation:landscape) {
+    .card-style {
+        height: 80vh;
+    }
+
+    .descricao-card {
+        width: 300px;
+        font-size: 1.5rem;
+        margin: 0 0 15vh;
+    }
+
+    .card-style {
+        padding: 60px !important;
+    }
+
+}
+
+@media (max-width: 896px) and (orientation:landscape) {
+
+    .descricao-card {
+        width: 300px;
+        font-size: 1.5rem;
+        margin: 0 0 16vh;
+    }
+}
+
+@media (max-width: 812px) and (orientation:landscape) {
+    .card-style {
+        padding: 53px !important;
+    }
+
+}
+
+@media (max-width: 760px) and (orientation:landscape) {
+    .card-mini {
+        height: 60vh;
+    }
+
+    .descricao-card {
+        width: 300px;
+        font-size: 1.5rem;
+        margin: 0 0 17vh;
+    }
+
+    .card-style {
+        padding: 48px !important;
+    }
+
+}
+
+@media (max-width: 428px) {
+    .card-mini {
+        height: 13vh;
+    }
+
+    .card-style {
+        height: 17vh;
+        padding: 25px !important;
+    }
+
+    .descricao-card {
+        font-size: 0.8rem;
+        margin: 0 0 4vh;
+    }
+
+    .titulo {
+        font-size: 1.6rem !important;
+    }
+
+    .card-title {
+        font-size: 1.2rem !important;
+    }
+
+    .icon-card {
+        width: 1.5rem !important;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .descricao-card {
+        font-size: 0.8rem;
+        margin: 0 0 4vh;
+    }
+
+    .card-style {
+        height: 17vh;
+        padding: 27px !important;
+    }
+
+    .titulo {
+        font-size: 1.6rem !important;
+    }
+
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 // testando a branch
 const footerStyle = {
     position: 'fixed',
@@ -12,8 +13,6 @@ const footerStyle = {
       borderTopRightRadius: '30px',
       boxShadow: '0px 4px 10px green',
       minHeight: '64px',
-      display: 'flex',
-      alignItems: 'flex-start',
     };
     const divStyle = {
         marginTop: '15%',
@@ -37,7 +36,7 @@ const footerStyle = {
     const MenuComponent = () => 
         <div style={divStyle}>
             <footer style={footerStyle}>
-                    <img src='./HomeIcon.svg' style={icon1} alt='oi'/>
+                    <Link to ='/pagina inicial'><img src='./HomeIcon.svg' style={icon1} alt='oi'/></Link>
                     <img src='./CatalogoIcon.svg' style={icon2} alt='oi'/>
                     <img src='./FolhaIcon.svg' style={icon2} alt='oi'/>
                         </footer>
