@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
     Layout,
     Typography,
@@ -15,39 +15,11 @@ import logo from '../../../assets/logo.png';
 import "../../../fonts/HKGrotesk-Bold.otf";
 import "../../../fonts/HKGrotesk-Regular.otf";
 import "../../../fonts/HKGrotesk-Medium.otf";
-import { useAuthentication } from "../../../hooks/useAuthentication";
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
 const PaginaInicial = () => {
-    const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const { login, error: authError, loading } = useAuthentication();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setError("");
-
-    const user = {
-      email,
-      password,
-    };
-
-    const res = await login(user);
-
-    console.log(res);
-  };
-
-  useEffect(() => {
-    console.log(authError);
-    if (authError) {
-      setError(authError);
-    }
-  }, [authError]);
 
   return (
     <Layout className="layout">
@@ -86,18 +58,18 @@ const PaginaInicial = () => {
                             </Link>
                         </Col>
                     </Row>
-                    <form onSubmit={handleSubmit}>
+                    <form >
                     <div className='container_item'>
                         <Col>
                             <Text style={{ fontSize: '1rem', color: '#6D7970' }}>Email</Text><br />
-                            <Input type="email" name="email" size="large" required value={email} onChange={(e) => setEmail(e.target.value)}
+                            <Input type="email" name="email" size="large" required
                             placeholder="exempland@exemple.com" style={{ width: '85vw', color: '#6D7970' }} prefix={<UserOutlined />} />
                         </Col>
                     </div>
                     <div className='container_item' style={{ marginBottom: '2rem' }}>
                         <Col>
                             <Text style={{ fontSize: '1rem', color: '#6D7970' }}>Senha</Text><br />
-                            <Input.Password name="password" required value={password} onChange={(e) => setPassword(e.target.value)}
+                            <Input.Password name="password" required
                             size="large" style={{ width: '85vw' }} />
                         </Col>
                     </div>
@@ -122,7 +94,6 @@ const PaginaInicial = () => {
                     </div>
                     </form>
                     <Row className='container_item' >
-                    {error && <p className="error">{error}</p>}
                         <Col>
                             <Text style={{ fontSize: '1rem', fontWeight: 'ligther', color: '#6D7970' }}>Não tem uma conta?</Text>
                             <Link to='/cadastro'>

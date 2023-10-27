@@ -1,25 +1,28 @@
 @font-face {
     font-family: "HKGrotesk-Regular";
     src: local("HKGrotesk-Regular"),
-        url("../../../fonts/HKGrotesk-Regular.otf") format("opentype");
+        url("../../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "HKGrotesk-Medium";
     src: local("HKGrotesk-Medium"),
-        url("../../../fonts/HKGrotesk-Medium.otf") format("opentype");
+        url("../../assets/fonts/HKGrotesk-Medium.otf") format("opentype");
     font-weight: lighter;
 }
-.ant-input-affix-wrapper{
+
+.ant-input-affix-wrapper {
     border-radius: 16px !important;
     border: 1px solid #6D7970 !important;
-  }
-.ant-typography{
+}
+
+.ant-typography {
     font-family: "HKGrotesk-Regular" !important;
     color: #6D7970;
-    
+
 }
+
 .ant-layout {
     background: #F6F6F6 !important;
 }
@@ -32,11 +35,19 @@
     font-size: 1.3rem !important;
 }
 
-.button-login{
+.button-login {
     padding: 0 14vw !important;
     font-weight: bold !important;
     height: auto !important;
     font-size: 1.5rem !important;
+}
+
+.button-submit {
+    padding: 2px;
+    border-bottom: solid 1px #6D7970;
+    color: #6D7970;
+    font-weight: bold;
+    height: 24px;
 }
 
 .container_item {
@@ -52,7 +63,24 @@
     color: --var(black);
 }
 
+.button-submit {
+    background: #EA7E84;
+    border: none;
+    border-radius: 16px;
+    width: 44vw;
+    height: 3rem;
+    box-shadow: 1px 3px 3px 1px #EA7E84;
+    font-size: 1.2rem;
+    color: white;
+}
 
+.button-link {
+    padding: 2px;
+    border-bottom: solid 1px #6D7970;
+    color: #6D7970;
+    font-weight: bold;
+    height: 24px;
+}
 
 .container_step {
     display: flex;
@@ -69,24 +97,28 @@
     border-radius: 8px;
     background-color: white; */
 }
+
 .ant-layout {
     background: #F6F6F6 !important;
 }
 
 @media (max-width: 450px) {
-    .button-login{
+    .button-login {
         padding: 0 8vw !important;
     }
-  }
-  @media (max-width: 390px) {
-    .button-login{
+}
+
+@media (max-width: 390px) {
+    .button-login {
         padding: 0 7vw !important;
     }
-  }
-  @media (min-width: 667px) {
-    .button-login{
+}
+
+@media (min-width: 667px) {
+    .button-login {
         padding: 0 12vw !important;
     }
+<<<<<<< HEAD
   }
 
   .logo {
@@ -94,4 +126,6 @@
     display: block;
     width: 40%;
     margin-bottom: 10%;
+=======
+>>>>>>> main
 }

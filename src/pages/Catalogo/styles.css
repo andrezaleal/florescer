@@ -44,11 +44,6 @@
 
 }
 
-<<<<<<< HEAD
-.card-oval{
-    width: 43vw !important;
-}
-=======
 .img-catalogo {
     width: 31vw;
     margin: 12% -2.5%;
@@ -61,7 +56,6 @@
     margin: 10px 0 0 0 !important;
 }
 
->>>>>>> main
 .card-catalogo-style {
     padding: 20px;
     border-radius: 16px !important;
@@ -79,17 +73,10 @@
     display: inline-table !important;
     background-color: transparent !important;
     border: none !important;
-<<<<<<< HEAD
-    width: 47vw;
-    text-align: center;
-    padding: 0 !important;
-    margin: 0px -25px 0 0;
-=======
     width: 49vw;
     text-align: center;
     padding: 0 !important;
     margin: 0px -33px 0 0;
->>>>>>> main
     font-size: 1.5rem;
     color: #6D7970 !important;
 }
@@ -108,21 +95,6 @@
     padding: 0 24px;
     justify-content: center;
     display: flex;
-}
-
-.button-add{
-    position:fixed;
-    right:2em;
-    bottom:2em; 
-    background-color:#8AB77B !important; 
-    border:none;
-    width: 5rem !important;
-    height: 5rem !important;
-   
-}
-
-.icon-add{
-    font-size: 30px !important;
 }
 
 #components-layout-demo-top .logo {
