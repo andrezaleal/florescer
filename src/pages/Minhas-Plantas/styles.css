@@ -44,6 +44,11 @@
 
 }
 
+<<<<<<< HEAD
+.card-oval{
+    width: 43vw !important;
+}
+=======
 .img-catalogo {
     width: 31vw;
     margin: 12% -2.5%;
@@ -56,6 +61,7 @@
     margin: 10px 0 0 0 !important;
 }
 
+>>>>>>> main
 .card-catalogo-style {
     padding: 20px;
     border-radius: 16px !important;
@@ -73,10 +79,17 @@
     display: inline-table !important;
     background-color: transparent !important;
     border: none !important;
+<<<<<<< HEAD
+    width: 47vw;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0px -25px 0 0;
+=======
     width: 49vw;
     text-align: center;
     padding: 0 !important;
     margin: 0px -33px 0 0;
+>>>>>>> main
     font-size: 1.5rem;
     color: #6D7970 !important;
 }

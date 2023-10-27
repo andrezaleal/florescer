@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+.titulo {
+=======
 titulo {
+>>>>>>> main
     color: #6D7970 !important;
     text-align: center;
     font-weight: bolder !important;
@@ -26,7 +30,10 @@ titulo {
     align-content: flex-start;
     width: 100%;
     margin: 3% 0;
+<<<<<<< HEAD
+=======
     overflow-x: hidden;
+>>>>>>> main
     /* width: 70vw;
     min-width: 70vh; */
     /* border: 2px solid #E5E5E5;

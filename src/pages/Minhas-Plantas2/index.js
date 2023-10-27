@@ -57,6 +57,7 @@ const Catalogo = () => {
                             </Col>
                         </Row>
                         <Row className='container_item' style={{ alignContent: 'center', margin:0 }}>
+
                             <Link to ='/adicionar planta'>
                             <Col>
                                 <Image

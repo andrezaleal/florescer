@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import {
     Layout,
     Typography,
@@ -8,13 +10,14 @@ import {
     Button,
     Image,
     Card,
-    
+    Tooltip,
 } from 'antd';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './styles.css';
 import { ArrowLeftOutlined, SearchOutlined} from '@ant-design/icons';
 import card_add from "../../../assets/add.png";
 import card_oval from "../../../assets/card-oval.png";
+import MenuComponent from '../../../components/MenuComponent';
 import "antd/dist/antd.css";
 
 const { Title, Text } = Typography;
@@ -54,35 +57,28 @@ const Catalogo = () => {
                             </Col>
                         </Row>
                         <Row className='container_item' style={{ alignContent: 'center', margin:0 }}>
-                           <Link to='/adicionar planta'> <Col>
+                            <Link to ='/adicionar planta'>
+                            <Col>
                                 <Image
                                     src={card_add}
                                     preview={false}
                                     className='card-oval'
                                 />
-                            </Col></Link>
-                            <Col>
-                                <Image
-                                    src={card_oval}
-                                    preview={false}
-                                    className='card-oval'
-                                />
                             </Col>
+                            </Link>
+                           
                         </Row>
                         <Row className='container_item' style={{ margin: '0' }}>
                             <Col>
                                 <Card className="card-categoria" >
-                                    <Text style={{ color: '#6D7970' }}>Cacto juliette</Text>
+                                    <Text style={{ color: '#6D7970' }}></Text>
                                 </Card>
 
-                                <Card className="card-categoria">
-                                    <Text style={{ color: '#6D7970' }}>Cacto juliette</Text>
-                                </Card>
                             </Col>
                         </Row>
                     </Row>
                 </Row>
-
+<MenuComponent/>
             </Content >
 
 

@@ -20,6 +20,7 @@ import minhasPlantasIcon from "../../../assets/minhas-plantas-icon.svg";
 import quizIcon from "../../../assets/quiz-icon.svg";
 import logoutIcon from "../../../assets/logout-icon.svg";
 import './styles.css'
+import MenuComponent from '../../../components/MenuComponent';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -149,6 +150,7 @@ const PaginaInicial = () => {
                     </Row>
                 </Row>
             </div>
+            <MenuComponent/>
         </Content>
 
 

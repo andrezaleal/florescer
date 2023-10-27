@@ -57,13 +57,11 @@
 }
 
 .card-catalogo-style {
-    padding: 20px;
-    border-radius: 16px !important;
     display: inline-table !important;
     background-color: transparent !important;
     border: none !important;
     padding: 36px 29px !important;
-    width: 45vw;
+    width: 45vw !important;
     height: auto;
     background-repeat: no-repeat !important;
     background-size: 48vw, 2vh, contain !important;
