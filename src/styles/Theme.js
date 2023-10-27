@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "../fonts/HKGrotesk-Bold.otf";
-import "../fonts/HKGrotesk-Regular.otf";
-import "../fonts/HKGrotesk-Medium.otf";
+import "../assets/fonts/HKGrotesk-Bold.otf";
+import "../assets/fonts/HKGrotesk-Regular.otf";
+import "../assets/fonts/HKGrotesk-Medium.otf";
 import { ThemeProvider } from 'styled-components';
 
 const theme = {

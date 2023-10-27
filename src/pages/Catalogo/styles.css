@@ -1,0 +1,226 @@
+.titulo-categoria {
+    color: #6D7970 !important;
+    text-align: center;
+    font-weight: bolder !important;
+    font-size: 2.3rem !important;
+    margin: 1rem 0 0px 3rem;
+}
+
+.container_item {
+    width: 100%;
+    margin: 1vh 0;
+    justify-content: center;
+    display: flex;
+}
+
+.container_item>h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    color: --var(black);
+}
+
+.container_step {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+    width: 100%;
+    margin: 3% 0;
+    /* width: 70vw;
+    min-width: 70vh; */
+    /* border: 2px solid #E5E5E5;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: white; */
+}
+
+.ant-input {
+    background: transparent;
+}
+
+.ant-typography {
+    font-family: "HKGrotesk-Regular" !important;
+
+}
+
+.img-catalogo {
+    width: 31vw;
+    margin: 12% -2.5%;
+}
+
+.icon-catalogo {
+    position: absolute;
+    right: 0;
+    width: 2.5rem !important;
+    margin: 10px 0 0 0 !important;
+}
+
+.card-catalogo-style {
+    padding: 20px;
+    border-radius: 16px !important;
+    display: inline-table !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 36px 29px !important;
+    width: 45vw;
+    height: auto;
+    background-repeat: no-repeat !important;
+    background-size: 48vw, 2vh, contain !important;
+}
+
+.card-categoria {
+    display: inline-table !important;
+    background-color: transparent !important;
+    border: none !important;
+    width: 49vw;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0px -33px 0 0;
+    font-size: 1.5rem;
+    color: #6D7970 !important;
+}
+
+.ant-card-body {
+    padding: 0 !important;
+}
+
+.site-card-border-less-wrapper {
+    padding: 30px;
+
+}
+
+.site-layout-content {
+    min-height: 280px;
+    padding: 0 24px;
+    justify-content: center;
+    display: flex;
+}
+
+#components-layout-demo-top .logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+
+
+@media (max-width: 1280px) and (orientation:landscape) {
+    .img-catalogo {
+        margin: 14% 2.5%;
+    }
+
+    .card-catalogo-style {
+        padding: 48px 52px !important;
+
+    }
+
+    .titulo-categoria {
+        font-size: 2.5rem !important;
+    }
+
+    .icon-catalogo {
+        width: 3rem !important;
+    }
+}
+
+@media (max-width: 1080px) and (orientation:landscape) {
+    .card-catalogo-style {
+        padding: 48px 52px !important;
+    }
+
+    .titulo-categoria {
+        font-size: 2.5rem !important;
+    }
+
+    .card-categoria {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 926px) and (orientation:landscape) {
+    .card-catalogo-style {
+        padding: 34px 32px !important;
+    }
+
+    .img-catalogo {
+        margin: 14% -3.5%;
+    }
+
+    .icon-catalogo {
+        margin: 10px 0 0 -44px;
+    }
+
+}
+
+@media (max-width: 854px) and (orientation:landscape) {
+    .card-catalogo-style {
+        padding: 34px 30px !important;
+    }
+
+}
+
+@media (max-width: 812px) and (orientation:landscape) {
+    .card-catalogo-style {
+        padding: 30px 30px !important;
+    }
+
+}
+
+@media (max-width: 760px) and (orientation:landscape) {
+    .card-catalogo-stylee {
+        padding: 30px 24px !important;
+    }
+
+}
+
+@media (max-width: 428px) {
+    .img-catalogo {
+        margin: 14% 2.5%;
+    }
+
+    .card-catalogo-style {
+        padding: 16px !important;
+    }
+
+    .icon-catalogo {
+        width: 1.2rem !important;
+        margin: 10px 0 0 -17px;
+    }
+
+    .card-categoria {
+        font-size: 1rem;
+        margin: 0px -17px 0 0;
+    }
+
+    .titulo-categoria {
+        font-size: 1.6rem !important;
+        margin: 1rem 0 0px 1rem;
+    }
+
+}
+
+@media (max-width: 384px) {
+    .card-catalogo-style {
+        padding: 15px 20px !important;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .card-catalogo-style {
+        padding: 13px 16px !important;
+    }
+
+    .titulo-categoria {
+        font-size: 1.3rem !important;
+        margin: 1rem 0 0 1rem;
+    }
+
+}
