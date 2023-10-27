@@ -1,0 +1,10 @@
+# Diretórios a serem ignorados
+node_modules/
+build/
+dist/
+coverage/
+
+# Arquivos específicos a serem ignorados
+.eslintrc.js
+.eslintignore
+package.json

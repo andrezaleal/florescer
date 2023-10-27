@@ -8,15 +8,16 @@ import { useAuthentication } from './hooks/useAuthentication';
 
 // pages 
 import Main from './pages/Main';
-import Login from './pages/Main/Login';
-import Cadastro from './pages/Main/Cadastro';
-import PaginaInicial from './pages/Main/Pagina-Inicial';
-import Quiz from './pages/Main/Quiz';
-import Catalogo from './pages/Main/Catalogo';
-import MinhasPlantas from './pages/Main/Minhas-Plantas';
+import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
+import PaginaInicial from './pages/Pagina-Inicial';
+import Quiz from './pages/Quiz';
+import Catalogo from './pages/Catalogo';
+import MinhasPlantas from './pages/Minhas-Plantas';
 
 // context
 import { AuthProvider } from "./context/AuthContext";
+
 
 export default function Routes() {
 

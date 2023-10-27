@@ -12,9 +12,9 @@ import {
 import { useHistory } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
-import cactus from "../../../assets/cacto.png";
-import cardVerde from "../../../assets/crad-medio-verde.png";
-import minhasPlantasIcon from "../../../assets/minhas-plantas-icon.svg";
+import cactus from "../../assets/cacto.png";
+import cardVerde from "../../assets/crad-medio-verde.png";
+import minhasPlantasIcon from "../../assets/minhas-plantas-icon.svg";
 import "antd/dist/antd.css";
 
 const { Title, Text } = Typography;
@@ -94,8 +94,6 @@ const Catalogo = () => {
                     </Row>
                 </Row>
             </Content>
-
-
         </Layout >
     );
 };
