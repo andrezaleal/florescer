@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "HKGrotesk-Medium";
+    src: local("HKGrotesk-Medium"),
+        url("../../assets/fonts/HKGrotesk-Medium.otf") format("opentype");
+    font-weight: lighter;
+}
+
+.ant-modal-content{
+    border-radius: 22px !important;
+    margin-top: 10% !important;
+    
+}
+.img-folha{
+    width: 250%;
+}
+
+.mensagem {
+    color: #6D7970 !important;
+    text-align: center;
+    font-family: 'HKGrotesk-Medium';
+    font-weight: lighter !important;
+    font-size: 1rem !important;
+}
+
+.button-modal{
+    font-family: 'HKGrotesk-Medium';
+    font-weight: lighter !important;
+    color: #4B9961 !important;
+    background-color: transparent;
+    border-color:#4B9961 !important ;
+    width: 44%;
+    border-radius: 10px;
+    margin: 3px;
+}

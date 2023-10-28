@@ -13,6 +13,8 @@ import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
 import cactus from "../../../../assets/cacto.png";
+import espada from "../../../../assets/espadadesao.png";
+
 import cardVerde from "../../../../assets/cardverdeplantas.png";
 import "antd/dist/antd.css";
 import MenuComponent from '../../../../components/MenuComponent';
@@ -20,7 +22,7 @@ import MenuComponent from '../../../../components/MenuComponent';
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
-const Catalogo = () => {
+const FacilCuidado = () => {
     const history = useHistory();
     return (
         <Layout className="layout" >
@@ -49,7 +51,7 @@ const Catalogo = () => {
 
                 <Row className='container_item' style={{ margin: 0, justifyContent: 'start' }}>
                         <Col>
-                            <Title level={2} className='titulo-categoria' style={{ textAlign: "left" }}>Grandes</Title>
+                            <Title level={2} className='titulo-categoria' style={{ textAlign: "left" }}>Fácil Cuidado</Title>
                         </Col>
                     </Row>
 
@@ -57,6 +59,7 @@ const Catalogo = () => {
                 <Row className='container_step'>
                     <Row className='container_item' style={{ alignContent: 'center' }}>
                         <Col>
+                        <Link to ='/cactus'>
                             <Card className="card-catalogo-style" bordered={false} style={{ backgroundImage: `url(${cardVerde})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
 
                                
@@ -66,28 +69,35 @@ const Catalogo = () => {
                                     className='img-catalogo'
                                 />
                             </Card>
+                            </Link>
+                            <Link to ='/cactus'>
                             <Card className="card-catalogo-style" bordered={false} style={{ backgroundImage: `url(${cardVerde})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
                                 
                                 <Image
-                                    src={cactus}
+                                    src={espada}
                                     preview={false}
                                     className='img-catalogo'
                                 />
                             </Card>
+                            </Link>
                         </Col>
                     </Row>
                     <Row className='container_item' style={{ margin: '0' }}>
                         <Col>
+                        <Link to ='/cactus'>
                             <Card className="card-categoria" >
-                                <Text style={{ color: '#6D7970' }}>Favoritas</Text>
+                                <Text style={{ color: '#6D7970' }}>Cactus</Text>
                             </Card>
-
+</Link>
+<Link to ='/espada'>
                             <Card className="card-categoria">
-                                <Text style={{ color: '#6D7970' }}>A - Z</Text>
+                                <Text style={{ color: '#6D7970' }}>Espada-de-São-Jorge</Text>
                             </Card>
+                            </Link>
                         </Col>
                     </Row>
                 </Row>
+
                 <MenuComponent/>
             </Content>
 
@@ -97,5 +107,5 @@ const Catalogo = () => {
 };
 
 
-export default Catalogo;
+export default FacilCuidado;
 

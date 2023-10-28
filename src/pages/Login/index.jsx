@@ -5,7 +5,8 @@ import {
  Row,
  Col,
  Input,
- Button
+ Button,
+ Image
 } from 'antd';
 import { Link } from 'react-router-dom';
 import { UserOutlined } from '@ant-design/icons';
@@ -14,6 +15,7 @@ import "antd/dist/antd.css";
 import "../../assets/fonts/HKGrotesk-Bold.otf";
 import "../../assets/fonts/HKGrotesk-Regular.otf";
 import "../../assets/fonts/HKGrotesk-Medium.otf";
+import logo from "../../assets/logo.svg";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const { Title, Text } = Typography;
@@ -46,7 +48,12 @@ const Login = () => {
 
  return (
   <Layout className="layout">
-   <Title level={2} className='titulo'>Bem-vindo ao Florescer</Title>
+    <Image
+     src={logo}
+     preview={false}
+     className='logo-login'
+    />
+   <Title className='titulo-inicio'>Bem-vindo ao Florescer</Title>
    <Content className="site-layout-content">
     <div>
      <Row className='container_step'>

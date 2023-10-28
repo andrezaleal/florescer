@@ -30,7 +30,7 @@ import deserto from "../../../../assets/rosadodeserto.png";
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
-const Catalogo = () => {
+const CatalogoAZ = () => {
     const history = useHistory();
     return (
         <Layout className="layout" >
@@ -71,7 +71,7 @@ const Catalogo = () => {
                     </Link>
 
                     <Col>
-                    <Link to ='/cactus'>
+                    <Link to ='/planta'>
                     <img src={cactus} className="card-catalogo-style"/>
                     </Link>
                     </Col>
@@ -166,5 +166,5 @@ const Catalogo = () => {
 };
 
 
-export default Catalogo;
+export default CatalogoAZ;
 

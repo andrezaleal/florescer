@@ -6,7 +6,8 @@ import {
  Row,
  Col,
  Input,
- Button
+ Button,
+ Image
 } from 'antd';
 import { Link } from 'react-router-dom';
 import { UserOutlined } from '@ant-design/icons';
@@ -16,6 +17,7 @@ import "../../assets/fonts/HKGrotesk-Bold.otf";
 import "../../assets/fonts/HKGrotesk-Regular.otf";
 import "../../assets/fonts/HKGrotesk-Medium.otf";
 import { useAuthentication } from "../../hooks/useAuthentication";
+import logo from "../../assets/logo.svg";
 
 
 const { Title, Text } = Typography;
@@ -53,7 +55,12 @@ const Cadastro = () => {
 
  return (
   <Layout className="layout">
-   <Title level={2} className='titulo'>Junte-se ao aplicativo mais completo sobre plantas!</Title>
+     <Image
+     src={logo}
+     preview={false}
+     className='logo-login'
+    />
+   <Title className='titulo-inicio'>Junte-se ao aplicativo mais completo sobre plantas!</Title>
    <Content className="site-layout-content">
     <div>
      <Row className='container_step'>

@@ -5,6 +5,10 @@
     display: flex;
 }
 
+.margin-page-planta{
+    margin-bottom: 10% !important;
+}
+
 .container_item>h2 {
     font-weight: bold;
     font-size: 2rem;
@@ -77,13 +81,13 @@
 }
 
 .icon-planta {
-    width: 2rem;
-    margin-right: 12px;
+    width: 1.2rem !important;
+    margin-right: 1rem !important;
 }
 
 .icon-estrela {
-    width: 2rem;
-    margin-right: 15px;
+    width: 1.3rem !important;
+    margin: 0 !important;
 }
 
 @media (max-width:428px) {

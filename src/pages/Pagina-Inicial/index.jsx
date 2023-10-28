@@ -32,24 +32,24 @@ const PaginaInicial = () => {
  const { logout } = useAuthentication();
 
  return (
-  <Layout className="layout">
+  <Layout className="layout margin-page">
    <Link to='/login'>
     <Image
      src={logoutIcon}
      preview={false}
      className='icon-card'
-     style={{ width: '1.5rem' }} onClick={logout}
+     style={{ width: '1.5rem', marginRight: '15px'}} onClick={logout}
     />
    </Link>
-   <Title className='titulo'>Florescer</Title>
-   <Content className="site-layout-content" style={{ overflow: 'hidden' }}>
+   <Title className='titulo-page'>FLORESCER</Title>
+   <Content className="site-layout-content" style={{ overflow: 'hidden', padding: '0' }}>
     <div>
      <Row className='container_step'>
       <Row className='container_item'>
        <Col>
-        <div className="site-card-border-less-wrapper">
+        <div className="site-card-border-less-wrapper" style={{paddingTop: '0' }}>
          <Link to='/catalogo'>
-          <Card className="card-style" bordered={false} style={{ backgroundImage: `url(${cardRosa})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
+          <Card className="card-style" bordered={false} style={{ backgroundImage: `url(${cardRosa})`, color: "FFFFFF"}}>
            <Image
             src={catalogoIcon}
             preview={false}
@@ -59,7 +59,7 @@ const PaginaInicial = () => {
            <Text className="descricao-card" style={{ color: "#FFFFFF" }}>Vasculhe alguns tipos de plantas</Text>
           </Card>
          </Link>
-         <Link to='/minhas plantas'><Card className="card-style" bordered={false} style={{ backgroundImage: `url(${cardverde})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
+         <Link to='/minhas plantas'><Card className="card-style" bordered={false} style={{ backgroundImage: `url(${cardverde})`, color: "FFFFFF" }}>
           <Image
            src={minhasPlantasIcon}
            preview={false}
@@ -74,7 +74,7 @@ const PaginaInicial = () => {
       </Row>
       <Row className='container_item' style={{ margin: 0, justifyContent: 'start' }}>
        <Col>
-        <Title level={2} className='titulo' style={{ textAlign: "left", marginLeft: '2rem', marginBottom: '1rem' }}>Plantas Mais Comuns</Title>
+        <Title level={2} className='titulo-sessao' style={{ textAlign: "left", marginLeft: '2rem', marginBottom: '1rem' }}>PLANTAS POPULARES</Title>
        </Col>
       </Row>
       <Row className='container_item' style={{ margin: '0' }}>
@@ -122,7 +122,7 @@ const PaginaInicial = () => {
       </Row>
       <Row className='container_item' style={{ margin: '0', justifyContent: 'start' }}>
        <Col>
-        <Title level={2} className='titulo' style={{ marginLeft: '2rem' }}>Plantas Favoritas</Title>
+        <Title level={2} className='titulo-sessao' style={{ marginLeft: '2rem' }}>PLANTAS FAVORITAS</Title>
        </Col>
       </Row>
       <Row className='container_item' style={{ margin: '0' }}>

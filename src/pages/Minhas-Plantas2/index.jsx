@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 import {
     Layout,
@@ -15,15 +14,15 @@ import {
 import { useHistory, Link } from 'react-router-dom';
 import './styles.css';
 import { ArrowLeftOutlined, SearchOutlined} from '@ant-design/icons';
-import card_add from "../../../assets/add.png";
-import card_oval from "../../../assets/card-oval.png";
+import card_add from "../../assets/add.png";
+import card_oval from "../../assets/card-oval.png";
 import "antd/dist/antd.css";
-import MenuComponent from '../../../components/MenuComponent';
+import MenuComponent from '../../components/MenuComponent';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
-const Catalogo = () => {
+const MinhasPlantas2 = () => {
     const history = useHistory();
 
 
@@ -97,5 +96,5 @@ const Catalogo = () => {
 };
 
 
-export default Catalogo;
+export default MinhasPlantas2;
 

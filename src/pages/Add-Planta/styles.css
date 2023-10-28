@@ -5,6 +5,11 @@
     display: flex;
 }
 
+.margin-page-add-planta{
+    margin-top: 10% !important;
+}
+
+
 .container_item>h2 {
     font-weight: bold;
     font-size: 2rem;

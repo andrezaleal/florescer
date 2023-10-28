@@ -1,21 +1,26 @@
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { onAuthStateChanged } from "firebase/auth";
+
+// hooks
+import { useAuthentication } from './hooks/useAuthentication';
 
 
 
 // pages 
 import Main from './pages/Main';
-import Login from './pages/Main/Login';
-import Cadastro from './pages/Main/Cadastro';
-import PaginaInicial from './pages/Main/Pagina-Inicial';
-import Quiz from './pages/Main/Quiz';
+import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
+import PaginaInicial from './pages/Pagina-Inicial';
+import Quiz from './pages/Quiz';
 import Catalogo from './pages/Main/Catalogo';
-import MinhasPlantas from './pages/Main/Minhas-Plantas';
+import MinhasPlantas from './pages/Minhas-Plantas';
 import A_Z from './pages/Main/Catalogo/A_Z';
-import Plantinhas from './pages/Main/Minhas-Plantas2';
+import Plantinhas from './pages/Minhas-Plantas2';
 import FacilCuidado from './pages/Main/Catalogo/FacilCuidado';
 import Grandes from './pages/Main/Catalogo/Grandes';
-import Planta from './pages/Main/Planta';
-import Add_Planta from './pages/Main/Add-Planta';
+import Planta from './pages/Planta';
+import Add_Planta from './pages/Add-Planta';
 import placeholder from './pages/Main/PlantaPlaceholder/';
 import amorperfeito from './pages/Main/PlantaPlaceholder/AmorPerfeito';
 import cactus from './pages/Main/PlantaPlaceholder/Cactus';
@@ -29,15 +34,35 @@ import pacova from './pages/Main/PlantaPlaceholder/Pacová';
 import samambaia from './pages/Main/PlantaPlaceholder/Samambaia';
 
 
+// context
+import { AuthProvider } from "./context/AuthContext";
+
 export default function Routes() {
+
+  const [user, setUser] = useState(undefined);
+  const { auth } = useAuthentication();
+
+  const loadingUser = user === undefined;
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+  }, [auth]);
+
+  if (loadingUser) {
+    return <p>Carregando...</p>;
+  }
+
   return (
+    <AuthProvider value={{ user }}>
     <Router>
       <Switch>
         <Route exact path="/" component={Main}/>
-        <Route path="/cadastro" component={Cadastro}/>
-        <Route path="/login" component={Login}/>   
-        <Route path="/pagina inicial" component={PaginaInicial}/>
-        <Route path='/quiz' component={Quiz}/>
+        <Route path="/cadastro" component={user ? PaginaInicial : Cadastro}/>
+        <Route path="/login" component={user ? PaginaInicial : Login}/>   
+        <Route path="/pagina inicial" component={user ? PaginaInicial : Login}/>
+        <Route path='/quiz' component={user ? Quiz : Cadastro}/>
         <Route path='/catalogo' component={Catalogo}/>
         <Route path='/minhas plantas' component={MinhasPlantas}/>
         <Route path='/AZ' component={A_Z}/>
@@ -60,5 +85,6 @@ export default function Routes() {
 
       </Switch>
     </Router>
+    </AuthProvider>
   );
 }

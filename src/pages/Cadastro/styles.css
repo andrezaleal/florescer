@@ -27,12 +27,12 @@
     background: #F6F6F6 !important;
 }
 
-.titulo {
-    color: #6D7970;
+.titulo-inicio {
+    color: #6D7970 !important;
     text-align: center;
     font-family: 'HKGrotesk-Medium';
     font-weight: lighter !important;
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
 }
 
 .button-login {
@@ -118,14 +118,13 @@
     .button-login {
         padding: 0 12vw !important;
     }
-<<<<<<< HEAD
   }
 
-  .logo {
+  .logo-login {
     margin: auto;
     display: block;
-    width: 40%;
-    margin-bottom: 10%;
-=======
->>>>>>> main
+    width: 40% !important;
+    margin-bottom: 5%;
+    margin-top: 18%;
+
 }
