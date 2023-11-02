@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
  Layout,
  Typography,
@@ -16,7 +16,8 @@ import "../../assets/fonts/HKGrotesk-Bold.otf";
 import "../../assets/fonts/HKGrotesk-Regular.otf";
 import "../../assets/fonts/HKGrotesk-Medium.otf";
 import logo from "../../assets/logo.svg";
-import { useAuthentication } from "../../hooks/useAuthentication";
+
+import { AuthContext } from "../../services/auth";
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -24,27 +25,15 @@ const { Content } = Layout;
 const Login = () => {
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
- const [error, setError] = useState("");
+ const {signIn, loadingAuth} = useContext(AuthContext);
 
- const { login, error: authError, loading } = useAuthentication();
 
- const handleSubmit = async (e) => {
+ async function handleSignIn(e){
   e.preventDefault();
-  setError("");
-  const user = {
-   email,
-   password,
-  };
-  const res = await login(user);
-  console.log(res);
- };
-
- useEffect(() => {
-  console.log(authError);
-  if (authError) {
-   setError(authError);
+  if(email !=='' && password!==''){
+    await signIn(email,password);
   }
- }, [authError]);
+ }
 
  return (
   <Layout className="layout">
@@ -85,7 +74,7 @@ const Login = () => {
         </Link>
        </Col>
       </Row>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSignIn}>
        <div className='container_item'>
         <Col>
          <Text style={{ fontSize: '1rem', color: '#6D7970' }}>Email</Text><br />
@@ -106,13 +95,12 @@ const Login = () => {
        <div className='container_item' >
         <Col>
          <button type="submit" className="button-submit">
-          Entrar
+          {loadingAuth ? 'Carregando...' : 'Entrar'}
          </button>
         </Col>
        </div>
       </form>
       <Row className='container_item' >
-       {error && <p className="error">{error}</p>}
        <Col>
         <Text style={{ fontSize: '1rem', fontWeight: 'ligther', color: '#6D7970' }}>
          Não tem uma conta?
