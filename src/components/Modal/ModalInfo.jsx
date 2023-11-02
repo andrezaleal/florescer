@@ -7,9 +7,13 @@ const ModalInfo = ({ isOpen, onClose }) => {
   const handleOk = () => {
     onClose();
   };
+  const handleCancel = () => {
+    onClose();
+  };
 
   return (
     <Modal visible={isOpen} onOk={handleOk}
+    onCancel={handleCancel}
     footer={[
       <Row style={{ justifyContent: 'center'}}>
       <Button key="ok" type="primary" onClick={handleOk} className='button-modal'>
