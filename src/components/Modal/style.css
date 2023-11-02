@@ -5,30 +5,63 @@
     font-weight: lighter;
 }
 
-.ant-modal-content{
+@font-face {
+    font-family: "HKGrotesk-Grotesk-Bold";
+    src: local("HKGrotesk-Bold"),
+        url("../../assets/fonts/HKGrotesk-Bold.otf") format("opentype");
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: "HKGrotesk-Regular";
+    src: local("HKGrotesk-Regular"),
+        url("../../assets/fonts/HKGrotesk-Regular.otf") format("opentype");
+    font-weight: lighter;
+}
+
+.ant-modal-content {
     border-radius: 22px !important;
     margin-top: 10% !important;
-    
+
 }
-.img-folha{
+
+.img-folha {
     width: 250%;
 }
 
 .mensagem {
     color: #6D7970 !important;
     text-align: center;
-    font-family: 'HKGrotesk-Medium';
-    font-weight: lighter !important;
-    font-size: 1rem !important;
+    font-family: 'HKGrotesk-Grotesk-Bold';
+    font-size: 1.2rem !important;
 }
 
-.button-modal{
+.button-modal {
     font-family: 'HKGrotesk-Medium';
     font-weight: lighter !important;
     color: #4B9961 !important;
     background-color: transparent;
-    border-color:#4B9961 !important ;
+    border-color: #4B9961 !important;
     width: 44%;
     border-radius: 10px;
     margin: 3px;
+}
+
+.button-modal-confirm {
+    font-family: 'HKGrotesk-Grotesk-Bold';
+    color: #6D7970 !important;
+    background-color: transparent;
+    margin: 3px;
+    width: 40%;
+    border: none;
+}
+
+.button-modal-cancel {
+    font-family: 'HKGrotesk-Regular';
+    color: #6D7970 !important;
+    font-weight: lighter;
+    background-color: transparent;
+    margin: 3px;
+    width: 40%;
+    border: none;
 }
