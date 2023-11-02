@@ -1,0 +1,34 @@
+.button-alteracoes {
+  color: #6D7970 !important;
+  text-decoration-line: underline !important;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  text-decoration-line: underline !important;
+}
+.div-form {
+  margin-bottom: 3rem;
+}
+.row-excluir{
+  text-align: left !important;
+  justify-content: start !important;
+  margin: 1.5rem 0 !important;
+  cursor: pointer;
+}
+.icon-delete{
+  color: #75B47B;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+
+.row-input{
+  text-align: left !important;
+  justify-content: start !important;
+  flex-direction: column !important;
+}
+
+.text-delete {
+  color: #6D7970 !important;
+  font-size: 1.1rem !important;
+}
+
