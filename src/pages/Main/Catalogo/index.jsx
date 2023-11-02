@@ -6,8 +6,6 @@ import {
   Row,
   Col,
   Button,
-  Image,
-  Card
 } from 'antd';
 import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
@@ -19,7 +17,7 @@ import grandes from "../../../assets/grandes.png";
 import "antd/dist/antd.css";
 import MenuComponent from '../../../components/MenuComponent';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const { Content } = Layout;
 
 const Catalogo = () => {
@@ -80,8 +78,6 @@ const Catalogo = () => {
         </Row>
         <MenuComponent />
       </Content>
-
-
     </Layout >
   );
 };
