@@ -1,17 +1,17 @@
 import React from 'react';
-
 import { Normalize } from 'styled-normalize';
-
-import Routes from './routes';
-
+import Routes from './routes/routes';
 import Theme from './styles/Theme';
 import GlobalStyle from './styles/global';
+import AuthProvider from './services/auth';
 
 
 function App() {
   return (
     <Theme>
-      <Routes/>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
       <GlobalStyle />
       <Normalize />
     </Theme>
