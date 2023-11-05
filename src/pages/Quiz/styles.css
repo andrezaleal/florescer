@@ -22,6 +22,9 @@
     font-size: 2rem;
     color: --var(black);
 }
+.img-resultado-quiz{
+    width: 12rem;
+}
 
 .container_step {
     display: flex;
@@ -37,6 +40,32 @@
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background-color: white; */
+}
+
+.button-quiz-enviar {
+    background: #EA7E84;
+    border: none;
+    border-radius: 16px;
+    width: 13rem;
+    height: 3rem;
+    box-shadow: 1px 3px 3px 1px #EA7E84;
+    font-size: 1.2rem;
+}
+
+.button-quiz-enviar-row {
+    align-content: center !important;
+    margin-top: 37% !important;
+}
+
+.button-catalogo{
+    background: #EA7E84;
+    border: none;
+    border-radius: 16px;
+    width: 13rem;
+    height: 3rem;
+    box-shadow: 1px 3px 3px 1px #EA7E84;
+    font-size: 1.2rem;
+    margin-bottom: 16%;
 }
 
 .ant-layout {
@@ -59,7 +88,7 @@
     color: #6D7970;
     white-space: normal !important;
 }
-  
+
 .card-opcoes:focus-within {
     background: #75B47B !important;
     border: solid 1px #75B47B;
