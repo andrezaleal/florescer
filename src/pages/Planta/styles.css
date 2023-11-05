@@ -5,7 +5,7 @@
     display: flex;
 }
 
-.margin-page-planta{
+.margin-page-planta {
     margin-bottom: 10% !important;
 }
 
@@ -67,6 +67,8 @@
     height: 9vh;
     border-radius: 16px;
     padding: 10px;
+    max-width: 49vw;
+    font-size: 0.85rem;
 
 }
 
@@ -78,6 +80,7 @@
 .sobre-planta {
     color: #6D7970 !important;
     font-size: 1.1rem;
+    text-align: justify;
 }
 
 .icon-planta {
@@ -86,7 +89,7 @@
 }
 
 .icon-estrela {
-    width: 1.3rem !important;
+    width: 1.5rem !important;
     margin: 0 !important;
 }
 
@@ -110,7 +113,14 @@
     }
 
     .icon-estrela {
-        width: 1.5rem;
+        width: 1.7rem;
         margin-right: 15px;
+    }
+    
+}
+
+@media (min-width:800px) {
+    .card-planta-style {
+        font-size: 1.3rem;
     }
 }
