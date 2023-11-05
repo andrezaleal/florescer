@@ -11,21 +11,13 @@ import Catalogo from '../pages/Main/Catalogo';
 import MinhasPlantas from '../pages/Minhas-Plantas';
 import A_Z from '../pages/Main/Catalogo/A_Z';
 import FacilCuidado from '../pages/Main/Catalogo/FacilCuidado';
-import Grandes from '../pages/Main/Catalogo/Grandes';
+import Pequenas from '../pages/Main/Catalogo/Pequenas';
 import Planta from '../pages/Planta';
-import Add_Planta from '../pages/Add-Planta';
+import AddPlanta from '../pages/Add-Planta';
 import PlantaId from '../pages/Planta-Id';
-import placeholder from '../pages/Main/PlantaPlaceholder';
-import amorperfeito from '../pages/Main/PlantaPlaceholder/AmorPerfeito';
-import cactus from '../pages/Main/PlantaPlaceholder/Cactus';
-import carnivora from '../pages/Main/PlantaPlaceholder/Carnivora';
-import deserto from '../pages/Main/PlantaPlaceholder/Deserto';
-import espada from '../pages/Main/PlantaPlaceholder/Espada';
-import lavanda from '../pages/Main/PlantaPlaceholder/Lavanda';
-import manjericao from '../pages/Main/PlantaPlaceholder/Manjericao';
-import orquidea from '../pages/Main/PlantaPlaceholder/Orquidea';
-import pacova from '../pages/Main/PlantaPlaceholder/Pacová';
-import samambaia from '../pages/Main/PlantaPlaceholder/Samambaia';
+import IntroSession from '../pages/Quiz/sessions/introSession';
+import ResultSession from '../pages/Quiz/sessions/resultSession';
+import Favoritos from '../pages/Main/Catalogo/Favoritos';
 import PrivateRoute from './private';
 
 
@@ -56,31 +48,32 @@ export default function Routes() {
           <PrivateRoute path='/facilCuidado'>
             <FacilCuidado />
           </PrivateRoute>
-          <PrivateRoute path='/Grandes'>
-            <Grandes />
+          <PrivateRoute path='/pequenas'>
+            <Pequenas />
           </PrivateRoute>
-          <PrivateRoute path='/planta'>
-            <Planta />
-          </PrivateRoute >
           <PrivateRoute path='/adicionar planta'>
-            <Add_Planta />
+            <AddPlanta />
+          </PrivateRoute>
+          <PrivateRoute path='/intro-quiz'>
+            <IntroSession />
+          </PrivateRoute>
+          <PrivateRoute path='/resultado-quiz'>
+            <ResultSession />
+          </PrivateRoute>
+          <PrivateRoute path='/favoritos'>
+            <Favoritos />
           </PrivateRoute>
           <PrivateRoute>
+            <PrivateRoute >
+              <Route path='/planta/:id'>
+                <Planta />
+              </Route>
+            </PrivateRoute >
             <Route path='/planta-id/:id'>
               <PlantaId />
             </Route>
           </PrivateRoute>
-          <Route path='/placeholder' component={placeholder} />
-          <Route path='/amorperfeito' component={amorperfeito} />
-          <Route path='/cactus' component={cactus} />
-          <Route path='/carnivora' component={carnivora} />
-          <Route path='/deserto' component={deserto} />
-          <Route path='/espada' component={espada} />
-          <Route path='/lavanda' component={lavanda} />
-          <Route path='/manjericao' component={manjericao} />
-          <Route path='/orquidea' component={orquidea} />
-          <Route path='/pacova' component={pacova} />
-          <Route path='/samambaia' component={samambaia} />
+
         </Switch>
       </AuthProvider>
     </Router>
