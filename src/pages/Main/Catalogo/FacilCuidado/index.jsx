@@ -1,111 +1,129 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
-    Layout,
-    Typography,
-    Input,
-    Row,
-    Col,
-    Button,
-    Image,
-    Card
+  Layout,
+  Typography,
+  Input,
+  Row,
+  Col,
+  Button,
+  Spin,
+  Card
 } from 'antd';
 import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
-import cactus from "../../../../assets/cacto.png";
-import espada from "../../../../assets/espadadesao.png";
-
-import cardVerde from "../../../../assets/cardverdeplantas.png";
 import "antd/dist/antd.css";
 import MenuComponent from '../../../../components/MenuComponent';
+import { db } from '../../../../services/firebaseConnections';
+import { getDocs, collection } from 'firebase/firestore';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
 const FacilCuidado = () => {
-    const history = useHistory();
-    return (
-        <Layout className="layout" >
-            <Row className='container_step' style={{ justifyContent: 'flex-start' }}>
-                <Col>
-                    <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
-                        <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
-                    </Button>
-                </Col>
-            </Row>
-            <Title className='titulo'>Catálogo</Title>
-            <Content className="site-layout-content" style={{ display: 'block', padding: 0 }} >
-                <Row className='container_item'>
-                    <Col>
-                        <Input
-                            placeholder="Pesquisar"
-                            style={{
-                                width: '85vw',
-                                background: 'none',
-                            }}
-                            suffix={<SearchOutlined />}
-                            size="large"
-                        />
-                    </Col>
-                </Row>
 
-                <Row className='container_item' style={{ margin: 0, justifyContent: 'start' }}>
-                        <Col>
-                            <Title level={2} className='titulo-categoria' style={{ textAlign: "left" }}>Fácil Cuidado</Title>
-                        </Col>
-                    </Row>
+  const history = useHistory();
 
+  const [facilCuidadoPlanta, setFacilCuidadoPlanta] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
-                <Row className='container_step'>
-                    <Row className='container_item' style={{ alignContent: 'center' }}>
-                        <Col>
-                        <Link to ='/cactus'>
-                            <Card className="card-catalogo-style" bordered={false} style={{ backgroundImage: `url(${cardVerde})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
+  const allPlants = collection(db, "catalogo");
 
-                               
-                                <Image
-                                    src={cactus}
-                                    preview={false}
-                                    className='img-catalogo'
-                                />
-                            </Card>
-                            </Link>
-                            <Link to ='/cactus'>
-                            <Card className="card-catalogo-style" bordered={false} style={{ backgroundImage: `url(${cardVerde})`, color: "FFFFFF", margin: '10px 0px 0px 0' }}>
-                                
-                                <Image
-                                    src={espada}
-                                    preview={false}
-                                    className='img-catalogo'
-                                />
-                            </Card>
-                            </Link>
-                        </Col>
-                    </Row>
-                    <Row className='container_item' style={{ margin: '0' }}>
-                        <Col>
-                        <Link to ='/cactus'>
-                            <Card className="card-categoria" >
-                                <Text style={{ color: '#6D7970' }}>Cactus</Text>
-                            </Card>
-</Link>
-<Link to ='/espada'>
-                            <Card className="card-categoria">
-                                <Text style={{ color: '#6D7970' }}>Espada-de-São-Jorge</Text>
-                            </Card>
-                            </Link>
-                        </Col>
-                    </Row>
-                </Row>
+  useEffect(() => {
+    async function loadPlantasFacilCuidado() {
+      try {
+        const querySnapshot = await getDocs(allPlants);
+        const lista = [];
+        querySnapshot.forEach((doc) => {
+          const facilCuidado = doc.data().facil_cuidado;
 
-                <MenuComponent/>
-            </Content>
+          if (facilCuidado) {
+            lista.push({
+              id: doc.id,
+              titulo: doc.data().titulo,
+              image: doc.data().image,
+              facil_cuidado: facilCuidado,
+            });
+          }
+        });
 
+        if (lista.length === 0) {
+          console.log("Nenhuma Planta Fácil de Cuidar Encontrada");
+          setLoading(false);
+          return;
+        }
+        lista.sort((a, b) => a.titulo.localeCompare(b.titulo));
+        setFacilCuidadoPlanta(lista);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    }
+    loadPlantasFacilCuidado();
+  }, []);
 
-        </Layout >
-    );
+  const filteredPlantas = facilCuidadoPlanta.filter((planta) => {
+    return planta.titulo.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
+  return (
+    <Layout className="layout" >
+      <Row className='container_item' sstyle={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
+        <Col span={8}>
+          <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
+            <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
+          </Button>
+        </Col>
+        <Col span={16}>
+          <Title className='titulo' style={{ marginTop: "0", display: 'flex', }}>Catálogo</Title>
+        </Col>
+      </Row>
+      <Content className="site-layout-content" style={{ display: 'block', padding: 0 }} >
+        <Row className='container_item'>
+          <Col>
+            <Input
+              placeholder="Pesquisar"
+              style={{
+                width: '85vw',
+                background: 'none',
+              }}
+              suffix={<SearchOutlined />}
+              size="large"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </Col>
+        </Row>
+        <Row className='container_item' style={{ margin: 0, justifyContent: 'start' }}>
+          <Col>
+            <Title level={4} className='titulo-catalogos' style={{ textAlign: "left" }}>Fácil Cuidado</Title>
+          </Col>
+        </Row>
+         {loading ? <Spin tip="Carregando..." size="large" alignitems={'center'} className='loading' /> :
+          <Row className='container_item' style={{ marginBottom: '6rem' }}>
+
+            {filteredPlantas.map((item, index) => (
+              <Col key={index} style={{ marginBottom: '1rem' }}>
+                <Link to={`/planta/${item.id}`}><Card className="card-catalogo-style-card" bordered={false} style={{ color: "FFFFFF", }}>
+                  <img
+                    src={item.image}
+                    className='img-catalogo-card'
+                  />
+                  <Col>
+                    <Text style={{ color: '#6D7970' }} className='nome-planta'>{item.titulo}</Text>
+                  </Col>
+                </Card></Link>
+              </Col>
+            ))}
+          </Row>
+        }
+
+        <MenuComponent />
+      </Content>
+    </Layout >
+  );
 };
-
 
 export default FacilCuidado;
 

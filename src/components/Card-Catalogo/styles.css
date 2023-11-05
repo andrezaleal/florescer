@@ -2,8 +2,8 @@
     color: #6D7970 !important;
     text-align: center;
     font-weight: bolder !important;
-    font-size: 3.2rem !important;
-    margin: 0rem 0 0px 1rem;
+    font-size: 2.3rem !important;
+    margin: 1rem 0 0px 3rem;
 }
 
 .container_item {
@@ -40,42 +40,36 @@
 }
 
 .ant-typography {
-    font-family: "HKGrotesk-Regular" !important;
+    font-family: "HKGrotesk-Bolder" !important;
+
 }
 
- .icon-catalogo-card{
- position: absolute;
-  right: 19px;
-  width: 1.2rem !important;
-  margin: 22px 0 0 0 !important;
- }
-.img-catalogo-card{
-    width: 100%;
-    margin: 0;
-}
-.container_item_text{
-    width: 100%;
-    margin: 0;
-    justify-content: center;
-    display: flex;
+.card-oval {
+    width: 43vw !important;
 }
 
-.card-catalogo-style-card {
+.card-catalogo-style {
+    padding: 20px;
+    border-radius: 16px !important;
+    display: inline-table !important;
     background-color: transparent !important;
     border: none !important;
+    padding: 36px 29px !important;
     width: 45vw;
-    text-align: center;
+    height: auto;
+    background-repeat: no-repeat !important;
+    background-size: 48vw, 2vh, contain !important;
 }
 
 .card-categoria {
     display: inline-table !important;
     background-color: transparent !important;
     border: none !important;
-    width: 55vw;
-    text-align: left;
+    width: 47vw;
+    text-align: center;
     padding: 0 !important;
-    margin: 0px 100px 0 0;
-    font-size: 1.5rem !important;
+    margin: 0px -25px 0 0;
+    font-size: 1.5rem;
     color: #6D7970 !important;
 }
 
@@ -95,6 +89,10 @@
     display: flex;
 }
 
+.icon-add {
+    font-size: 30px !important;
+}
+
 #components-layout-demo-top .logo {
     float: left;
     width: 120px;
@@ -108,6 +106,16 @@
     margin: 16px 0 16px 24px;
 }
 
+.titulo-catalogo{
+  color: white !important;
+  position: absolute !important;
+  bottom: 1rem !important;
+  font-size: 1rem !important;
+  width: 100%;
+  text-align: justify;
+  text-align: start;
+  margin-left: 0.5rem;
+}
 
 @media (max-width: 1280px) and (orientation:landscape) {
     .img-catalogo {
@@ -117,9 +125,6 @@
     .card-catalogo-style {
         padding: 48px 52px !important;
 
-    }
-    .card-catalogo-style-card{
-        padding: 48px 52px !important;
     }
 
     .titulo-categoria {
@@ -141,7 +146,7 @@
     }
 
     .card-categoria {
-        font-size: 3rem !important;
+        font-size: 2rem !important;
     }
 }
 
@@ -196,7 +201,7 @@
     }
 
     .card-categoria {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin: 0px -17px 0 0;
     }
 
@@ -223,5 +228,14 @@
         font-size: 1.3rem !important;
         margin: 1rem 0 0 1rem;
     }
+
+}
+
+@media (min-width: 800px) {
+   .titulo-catalogo{
+    bottom: 2rem !important;
+  font-size: 1.5rem !important;
+  margin-left: 1.5rem;
+   }
 
 }
