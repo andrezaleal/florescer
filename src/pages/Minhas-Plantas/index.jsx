@@ -23,8 +23,6 @@ import CardPlanta from '../../components/Card-Plantas';
 import folha from "../../assets/folha.svg";
 import MenuComponent from '../../components/MenuComponent';
 
-
-
 const { Title, Text } = Typography;
 const { Content } = Layout;
 
@@ -63,8 +61,7 @@ const MinhasPlantas = () => {
         .catch((error) => {
           console.log(error);
           setLoadPlantas(false);
-        })
-       
+        })   
     }
     loadPlantas()
   }, []);
@@ -124,7 +121,6 @@ const MinhasPlantas = () => {
 
                 </>
             }
-
           </Row>
         </Row>
         <Tooltip title="add">
@@ -137,7 +133,6 @@ const MinhasPlantas = () => {
     </Layout >
   );
 };
-
 
 export default MinhasPlantas;
 
