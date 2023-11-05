@@ -8,21 +8,19 @@ import {
   Image,
   Skeleton,
 } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { AuthContext } from '../../services/auth';
+import { db } from '../../services/firebaseConnections';
 import cardRosa from "../../assets/card-rosa.png";
-import cardverde from "../../assets/card-verde.png";
-import cardVerdeMini1 from "../../assets/card-mini-verde1.png";
-import cardVerdemini2 from "../../assets/card-mini-verde2.png";
+import cardverde from "../../assets/card-verde.png"
 import catalogoIcon from "../../assets/catalogo-icon.svg";
 import minhasPlantasIcon from "../../assets/minhas-plantas-icon.svg";
 import quizIcon from "../../assets/quiz-icon.svg";
+import logoutIcon from "../../assets/logout-icon.svg";
 import './styles.css'
 import MenuComponent from '../../components/MenuComponent';
 
-import logoutIcon from "../../assets/logout-icon.svg";
-import { AuthContext } from '../../services/auth';
-import { db } from '../../services/firebaseConnections';
-import { getDocs, collection, query, where } from 'firebase/firestore';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -205,6 +203,11 @@ const PaginaInicial = () => {
               </Col>
             </Row>
             {loadingFavoritos ? < Skeleton active /> :
+            plantafavoritada.length < 1 ? 
+            <div className='mensagem-jardim-favoritos'>
+              <Text style={{ color: '#6D7970', marginBottom: '1rem' }}>Você ainda não adicionou nenhuma plantinha aos favoritos..</Text>
+            </div> 
+            :
               <Row className='container_item row-mini-cards'>
                 {plantafavoritada.map((item, index) => (
                   <Col className='col-mini-card' key={index}>

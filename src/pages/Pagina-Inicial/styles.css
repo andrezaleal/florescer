@@ -156,6 +156,14 @@
     width: 95% !important;
     justify-content: start! important;
 }
+.mensagem-jardim-favoritos{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
 
 @media (max-width: 1080px) {
     .card-mini {
