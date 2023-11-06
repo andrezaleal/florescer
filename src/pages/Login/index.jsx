@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import {
  Layout,
  Typography,
@@ -46,7 +46,7 @@ const Login = () => {
    <Content className="site-layout-content">
     <div>
      <Row className='container_step'>
-      <Row className='container_item' style={{ justifyContent: 'flex-start', padding: '0 5.5vw' }}>
+      <Row className='container_item' style={{ justifyContent: 'center', padding: '0 5.5vw' }}>
        <Col>
         <Button
          type="link"
