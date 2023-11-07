@@ -41,32 +41,19 @@ const Planta = () => {
   const history = useHistory();
   const { id } = useParams();
   const [loadPlanta, setLoadPlanta] = useState(true);
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
   const [plantasId, setPlantasId] = useState([]);
   const [favoritarPlanta, setFavoritarPlanta] = useState(false);
 
   async function bookMarkPlant(e) {
-    const favoritosRef = query(
-      collection(db, "favoritos"),
-      where("userId", "==", user.uid),
-      where("nomePlanta", "==", plantasId.titulo)
-    );
-
-    const favoritosSnap = await getDocs(favoritosRef);
-    const numeroDeFavoritos = favoritosSnap.size;
-
-    if (numeroDeFavoritos === 0) {
-      await addDoc(collection(db, "favoritos"), {
-        nomePlanta: plantasId.titulo,
-        image_mini: plantasId.mini_image,
-        image: plantasId.image,
-        userId: user.uid,
-        plantaId: id,
-        createdAt: new Date(),
-      })
+    const userDb = doc(db, "users", user.uid);
+    if (!user.favoritos.includes(id)) {
+      user.favoritos.push(id);
+      await updateDoc(userDb, user)
         .then(() => {
           message.success("Sua plantinha foi adicionada aos favoritos!");
-          updateBookMarkPlant(true); // Atualize o estado para "true"
+          setUser(user);
+          setFavoritarPlanta(true);
         })
         .catch((error) => {
           console.error(error);
@@ -74,20 +61,20 @@ const Planta = () => {
         });
 
     } else {
-      const docId = favoritosSnap.docs[0].id;
-      const favoritoDocRef = doc(db, "favoritos", docId);
+      const favoritado = user.favoritos.filter(fav => fav !== id)
 
-      await deleteDoc(favoritoDocRef)
+      await updateDoc(userDb, { ...user, favoritos: favoritado })
         .then(() => {
           message.success("Sua plantinha foi removida dos favoritos!");
-          updateBookMarkPlant(false); // Atualize o estado para "false"
+          setUser({ ...user, favoritos: favoritado });
+          setFavoritarPlanta(false);
         })
         .catch((error) => {
           console.error(error);
-          message.error("Ocorreu um erro ao remover sua planta dos favoritos!");
+          message.error("Ocorreu um erro ao tentar remover sua planta aos favoritos.");
         });
     }
-   
+    console.log(user);
   }
 
   async function loadPlantaId(id) {
@@ -95,24 +82,7 @@ const Planta = () => {
       const plantaDoc = await getDoc(doc(db, 'catalogo', id));
       if (plantaDoc.exists()) {
         const plantaData = plantaDoc.data();
-        const lista = {
-          id: id,
-          titulo: plantaData.titulo,
-          adubacao: plantaData.adubacao,
-          clima: plantaData.clima,
-          cronograma: plantaData.cronograma,
-          favoritado: plantaData.favoritado,
-          curiosidade: plantaData.curiosidade,
-          descricao: plantaData.descricao,
-          facil_cuidado: plantaData.facil_cuidado,
-          image: plantaData.catalogo_image,
-          mini_image: plantaData.mini_image,
-          pequena: plantaData.pequena,
-          popularidade: plantaData.popularidade,
-          vasos: plantaData.vasos,
-        };
         setPlantasId(plantaData);
-        setFavoritarPlanta(plantaData.favoritado);
         setLoadPlanta(false);
       } else {
         console.log("Planta Não encontrada");
@@ -123,26 +93,10 @@ const Planta = () => {
     }
   }
 
-  const updateBookMarkPlant = async (newFavoritado) => {
-    setFavoritarPlanta(newFavoritado);
-
-    const plantaRef = doc(db, 'catalogo', id);
-    if (user) {
-      try {
-        await updateDoc(plantaRef, {
-          favoritado: newFavoritado,
-        });
-        console.log(`A planta ${plantasId.titulo} foi favoritada. Estado atual: ${newFavoritado}`);
-      } catch (error) {
-        console.error('Erro ao atualizar o favorito no banco de dados:', error);
-      }
-    }
-  };
-
   useEffect(() => {
     loadPlantaId(id)
+    setFavoritarPlanta(user.favoritos.includes(id))
   }, [id, user])
-
 
   return (
     <Layout className="layout margin-page-planta" >

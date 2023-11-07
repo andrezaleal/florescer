@@ -9,7 +9,7 @@ import {
   Skeleton,
 } from 'antd';
 import { Link } from 'react-router-dom';
-import { getDocs, collection, query, where } from 'firebase/firestore';
+import { getDocs, collection, query, where, documentId } from 'firebase/firestore';
 import { AuthContext } from '../../services/auth';
 import { db } from '../../services/firebaseConnections';
 import cardRosa from "../../assets/card-rosa.png";
@@ -37,8 +37,8 @@ const PaginaInicial = () => {
 
   const [plantafavoritada, setPlantaFavoritada] = useState([]);
   const [loadingFavoritos, setLoadingFavoritos] = useState(true);
-  const allPlantsMarkBook = collection(db, "favoritos");
-  const userPlantsQuery = query(allPlantsMarkBook, where("userId", "==", user.uid));
+  const allPlantsMarkBook = collection(db, "catalogo");
+  const userPlantsQuery = query(allPlantsMarkBook, where(documentId(), "in", user.favoritos));
 
 
   async function handleLogout() {
@@ -60,7 +60,6 @@ const PaginaInicial = () => {
       const lista = [];
       querySnapshot.forEach((doc) => {
         const popularidade = doc.data().popularidade;
-
         if (popularidade === 3) {
           lista.push({
             id: doc.id,
@@ -70,13 +69,11 @@ const PaginaInicial = () => {
           });
         }
       });
-
       if (lista.length === 0) {
         console.log("Nenhuma planta foi encontrada");
         setLoading(false);
         return;
       }
-
       const listaEmbaralhada = shuffleArray(lista);
       const tresPlantas = listaEmbaralhada.slice(0, 3);
 
@@ -95,8 +92,8 @@ const PaginaInicial = () => {
         snapshot.forEach((doc) => {
           lista.push({
             id: doc.id,
-            nome: doc.data().nomePlanta,
-            image: doc.data().image_mini,
+            nome: doc.data().titulo,
+            image: doc.data().mini_image,
             createdAt: doc.data().createdAt,
             plantaId: doc.data().plantaId
           })

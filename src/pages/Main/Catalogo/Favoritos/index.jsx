@@ -18,7 +18,7 @@ import folha from "../../../../assets/folha.svg";
 import MenuComponent from '../../../../components/MenuComponent';
 
 import { db } from '../../../../services/firebaseConnections';
-import { getDocs, collection, query, where } from 'firebase/firestore';
+import { getDocs, collection, query, where, documentId } from 'firebase/firestore';
 import { AuthContext } from '../../../../services/auth';
 
 
@@ -34,8 +34,8 @@ const Favoritos = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const allPlantsMarkBook = collection(db, "favoritos");
-  const userPlantsQuery = query(allPlantsMarkBook, where("userId", "==", user.uid));
+  const allPlantsMarkBook = collection(db, "catalogo");
+  const userPlantsQuery = query(allPlantsMarkBook, where(documentId(), "in", user.favoritos));
 
   useEffect(() => {
     async function loadPlantasMarkBook() {
@@ -45,7 +45,7 @@ const Favoritos = () => {
           snapshot.forEach((doc) => {
             lista.push({
               id: doc.id,
-              nome: doc.data().nomePlanta,
+              nome: doc.data().titulo,
               image: doc.data().image,
               createdAt: doc.data().createdAt,
               plantaId: doc.data().plantaId
@@ -76,7 +76,7 @@ const Favoritos = () => {
 
   return (
     <Layout className="layout" >
-      <Row className='container_item' sstyle={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
+      <Row className='container_item' style={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
         <Col span={8}>
           <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
             <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
