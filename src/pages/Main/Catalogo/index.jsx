@@ -44,7 +44,7 @@ const Catalogo = () => {
 
 
   return (
-    <Layout className="layout margin-catalogo">
+    <Layout className="layout margin-catalogo" style={{overflowX:'hidden'}}>
       <Row className='container_item' sstyle={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
         <Col span={8}>
           <Link to='/pagina inicial'>
