@@ -94,8 +94,6 @@ const PaginaInicial = () => {
             id: doc.id,
             nome: doc.data().titulo,
             image: doc.data().mini_image,
-            createdAt: doc.data().createdAt,
-            plantaId: doc.data().plantaId
           })
         })
         if (snapshot.docs.size === 0) {
@@ -208,7 +206,7 @@ const PaginaInicial = () => {
               <Row className='container_item row-mini-cards'>
                 {plantafavoritada.map((item, index) => (
                   <Col className='col-mini-card' key={index}>
-                    <Link to={`/planta/${item.plantaId}`}><Card className="card-mini" bordered={false} style={{ backgroundImage: `url(${item.image})`, backgroundSize: "30vw, 2vh, contain", backgroundRepeat: 'no-repeat' }} /></Link>
+                    <Link to={`/planta/${item.id}`}><Card className="card-mini" bordered={false} style={{ backgroundImage: `url(${item.image})`, backgroundSize: "30vw, 2vh, contain", backgroundRepeat: 'no-repeat' }} /></Link>
                     <Col>
                       <Text className='text-mini-card' style={{ color: '#6D7970' }}>{item.nome}</Text>
                     </Col>
