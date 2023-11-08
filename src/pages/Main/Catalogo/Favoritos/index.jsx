@@ -37,35 +37,32 @@ const Favoritos = () => {
   const allPlantsMarkBook = collection(db, "catalogo");
   const userPlantsQuery = query(allPlantsMarkBook, where(documentId(), "in", user.favoritos));
 
-  useEffect(() => {
-    async function loadPlantasMarkBook() {
-      const querySnapshot = await getDocs(userPlantsQuery)
-        .then((snapshot) => {
-          const lista = [];
-          snapshot.forEach((doc) => {
-            lista.push({
-              id: doc.id,
-              nome: doc.data().titulo,
-              image: doc.data().image,
-              createdAt: doc.data().createdAt,
-              plantaId: doc.data().plantaId
-            })
+  async function loadPlantasMarkBook() {
+    const querySnapshot = await getDocs(userPlantsQuery)
+      .then((snapshot) => {
+        const lista = [];
+        snapshot.forEach((doc) => {
+          lista.push({
+            id: doc.id,
+            nome: doc.data().titulo,
+            image: doc.data().image,
           })
-          if (snapshot.docs.size === 0) {
-            console.log("Nenhuma Planta Encontrada")
-            setLoading(false);
-            return;
-          }
-          lista.sort((a, b) => b.createdAt - a.createdAt);
-          setPlantaFavoritada(lista);
-          setLoading(false);
         })
-        .catch((error) => {
-          console.log(error);
+        if (snapshot.docs.size === 0) {
+          console.log("Nenhuma Planta Encontrada")
           setLoading(false);
-        })
+          return;
+        }
+        setPlantaFavoritada(lista);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      })
 
-    }
+  }
+  useEffect(() => {
     loadPlantasMarkBook()
   }, []);
 
@@ -132,7 +129,7 @@ const Favoritos = () => {
             <Row className='container_item' style={{ marginBottom: '6rem' }}>
               {filteredPlantas.map((item, index) => (
                 <Col key={index} style={{ marginBottom: '1rem' }}>
-                  <Link to={`/planta/${item.plantaId}`}><Card className="card-catalogo-style-card" bordered={false} style={{ color: "FFFFFF", }}>
+                  <Link to={`/planta/${item.id}`}><Card className="card-catalogo-style-card" bordered={false} style={{ color: "FFFFFF", }}>
                     <img
                       src={item.image}
                       className='img-catalogo-card'

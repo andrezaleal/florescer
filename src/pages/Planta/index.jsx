@@ -22,7 +22,7 @@ import favoritado from "../../assets/estrelaPreenchida.svg";
 import favoritar from "../../assets/estrela.svg";
 import MenuComponent from '../../components/MenuComponent';
 import { db } from '../../services/firebaseConnections';
-import { doc, getDoc, query, addDoc, getDocs, collection, where, deleteDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { AuthContext } from '../../services/auth';
 
 const { Title, Text } = Typography;
@@ -74,7 +74,6 @@ const Planta = () => {
           message.error("Ocorreu um erro ao tentar remover sua planta aos favoritos.");
         });
     }
-    console.log(user);
   }
 
   async function loadPlantaId(id) {
