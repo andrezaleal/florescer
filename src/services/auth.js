@@ -29,25 +29,33 @@ function AuthProvider({ children }) {
         loadUser();
     }, [])
 
+    function changeUser(user){
+        storageUser(user);
+        setUser(user);
+    }
+
     async function signIn(email, password) {
         setLoadingAuth(true);
         await signInWithEmailAndPassword(auth, email, password)
             .then(async (value) => {
+
                 let uid = value.user.uid;
 
                 const docRef = doc(db, "users", uid);
                 const docSnap = await getDoc(docRef);
-
+                const  dados = docSnap.data();
                 let data = {
                     uid: uid,
-                    nome: docSnap.data.nome,
+                    nome: dados.nome,
                     email: value.user.email,
+                    favoritos: dados.favoritos
                 }
                 setUser(data);
-                storageUser(data);
+                storageUser(data);  
                 setLoadingAuth(false);
                 message.success("Bem vindo(a) de volta!");
                 history.push("/pagina inicial");
+
             }).catch((error) => {
                 console.log(error);
 
@@ -63,9 +71,6 @@ function AuthProvider({ children }) {
                   }
                 setLoadingAuth(false);
             })
-
-
-
     }
 
     async function signUp(email, password, nome) {
@@ -75,20 +80,21 @@ function AuthProvider({ children }) {
                 let uid = value.user.uid
                 await setDoc(doc(db, "users", uid), {
                     nome: nome,
+                    favoritos: [],
+                    uid:uid,
                 }).then(() => {
                     let data = {
                         uid: uid,
                         nome: nome,
                         email: email,
+                        favoritos:[],
                     }
-
                     setUser(data);
                     storageUser(data);
                     setLoadingAuth(false);
                     message.success("Seja bem vindo ao florescer");
                     history.push("/pagina inicial");
                 })
-
             }).catch((error) => {
                 console.log(error);
                 if (error.message.includes("Password")) {
@@ -99,9 +105,6 @@ function AuthProvider({ children }) {
                     message.error('Ocorreu um erro durante o cadastro. Tente novamente mais tarde.');
                 }
                 setLoadingAuth(false);
-
-
-
             })
     }
 
@@ -115,7 +118,7 @@ function AuthProvider({ children }) {
         setUser(null);
     }
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, signIn, signUp, logout, loadingAuth, loading, }}>
+        <AuthContext.Provider value={{ signed: !!user, user, signIn, signUp, logout, loadingAuth, loading, setUser: changeUser}}>
             {children}
         </AuthContext.Provider>
     )
