@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Typography,
   Row,
@@ -10,6 +11,7 @@ import './styles.css';
 import cactus from "../../assets/cacto.png"
 import cardVerde from "../../assets/crad-medio-verde.png"
 import minhasPlantasIcon from '../../assets/minhas-plantas-icon.svg'
+
 const CardPlanta = ({ nome }) => {
   const { Text } = Typography;
   return (
@@ -17,7 +19,6 @@ const CardPlanta = ({ nome }) => {
       <Row className='container_item' style={{ alignContent: 'center' }}>
         <Col>
           <Card className="card-catalogo-style" bordered={false} style={{ backgroundImage: `url(${cardVerde})`, color: "FFFFFF",}}>
-
             <Image
               src={minhasPlantasIcon}
               preview={false}
@@ -39,5 +40,9 @@ const CardPlanta = ({ nome }) => {
     </>
   );
 }
+
+CardPlanta.propTypes = {
+  nome: PropTypes.string.isRequired,
+};
 
 export default CardPlanta;
