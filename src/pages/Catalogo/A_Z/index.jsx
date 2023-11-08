@@ -13,9 +13,10 @@ import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
-import MenuComponent from '../../../../components/MenuComponent';
-import { db } from '../../../../services/firebaseConnections';
-import { getDocs, collection } from 'firebase/firestore';
+import { getDocs, collection } from 'firebase/firestore'
+import { db } from '../../../services/firebaseConnections';
+
+import MenuComponent from '../../../components/MenuComponent';
 
 const { Title, Text } = Typography;
 const { Content } = Layout;
@@ -65,9 +66,7 @@ const CatalogoAZ = () => {
     loadPlantas()
   }, []);
 
-  const filteredPlantas = catalogo.filter((planta) => {
-    return planta.titulo.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  const filteredPlantas = catalogo.filter((planta) => planta.titulo.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <Layout className="layout" >

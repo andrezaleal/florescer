@@ -14,12 +14,12 @@ import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
-import folha from "../../../../assets/folha.svg";
-import MenuComponent from '../../../../components/MenuComponent';
+import folha from "../../../assets/folha.svg";
+import MenuComponent from '../../../components/MenuComponent';
 
-import { db } from '../../../../services/firebaseConnections';
+import { db } from '../../../services/firebaseConnections';
 import { getDocs, collection, query, where, documentId } from 'firebase/firestore';
-import { AuthContext } from '../../../../services/auth';
+import { AuthContext } from '../../../services/auth';
 
 
 const { Title, Text } = Typography;

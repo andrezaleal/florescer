@@ -7,17 +7,17 @@ import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
 import PaginaInicial from '../pages/Pagina-Inicial';
 import Quiz from '../pages/Quiz';
-import Catalogo from '../pages/Main/Catalogo';
+import Catalogo from '../pages/Catalogo';
 import MinhasPlantas from '../pages/Minhas-Plantas';
-import A_Z from '../pages/Main/Catalogo/A_Z';
-import FacilCuidado from '../pages/Main/Catalogo/FacilCuidado';
-import Pequenas from '../pages/Main/Catalogo/Pequenas';
+import A_Z from '../pages/Catalogo/A_Z';
+import FacilCuidado from '../pages/Catalogo/FacilCuidado';
+import Pequenas from '../pages/Catalogo/Pequenas';
 import Planta from '../pages/Planta';
 import AddPlanta from '../pages/Add-Planta';
 import PlantaId from '../pages/Planta-Id';
 import IntroSession from '../pages/Quiz/sessions/introSession';
 import ResultSession from '../pages/Quiz/sessions/resultSession';
-import Favoritos from '../pages/Main/Catalogo/Favoritos';
+import Favoritos from '../pages/Catalogo/Favoritos';
 import PrivateRoute from './private';
 
 

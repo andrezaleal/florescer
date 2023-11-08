@@ -10,15 +10,15 @@ import {
 import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
-import espada from "../../../assets/espada-sao-jorge.svg";
-import samambaia from "../../../assets/samba.svg";
-import cardRosa from "../../../assets/card-medio-rosa.svg";
-import cardVerde from "../../../assets/card-medio-verde.svg";
-import cactus from "../../../assets/cacto.png"
-import pacova from "../../../assets/pacova.svg"
+import espada from "../../assets/espada-sao-jorge.svg";
+import samambaia from "../../assets/samba.svg";
+import cardRosa from "../../assets/card-medio-rosa.svg";
+import cardVerde from "../../assets/card-medio-verde.svg";
+import cactus from "../../assets/cacto.png"
+import pacova from "../../assets/pacova.svg"
 import "antd/dist/antd.css";
-import MenuComponent from '../../../components/MenuComponent';
-import CardCatalogo from '../../../components/Card-Catalogo';
+import MenuComponent from '../../components/MenuComponent';
+import CardCatalogo from '../../components/Card-Catalogo';
 
 const { Title } = Typography;
 const { Content } = Layout;

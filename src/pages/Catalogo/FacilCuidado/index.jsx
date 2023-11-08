@@ -13,8 +13,8 @@ import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
-import MenuComponent from '../../../../components/MenuComponent';
-import { db } from '../../../../services/firebaseConnections';
+import MenuComponent from '../../../components/MenuComponent';
+import { db } from '../../../services/firebaseConnections';
 import { getDocs, collection } from 'firebase/firestore';
 
 const { Title, Text } = Typography;
