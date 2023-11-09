@@ -61,7 +61,7 @@ const MinhasPlantas = () => {
         .catch((error) => {
           console.log(error);
           setLoadPlantas(false);
-        })   
+        })
     }
     loadPlantas()
   }, []);
@@ -74,9 +74,11 @@ const MinhasPlantas = () => {
     <Layout className="layout" >
       <Row className='container_item' style={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
         <Col span={6}>
-          <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
-            <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
-          </Button>
+          <Link to='/pagina inicial'>
+            <Button type='link' style={{ color: '#6D7970' }}>
+              <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
+            </Button>
+          </Link>
         </Col>
         <Col span={18}>
           <Title className='titulo' style={{ margin: "0", display: 'flex' }}>Minhas Plantas</Title>
@@ -124,12 +126,12 @@ const MinhasPlantas = () => {
           </Row>
         </Row>
         <Tooltip title="add">
-            <Link to="/adicionar planta">
-              <Button className='button-add' type="primary" size="large" shape="circle" icon={<PlusOutlined className='icon-add' />} />
-            </Link>
-          </Tooltip>
+          <Link to="/adicionar planta">
+            <Button className='button-add' type="primary" size="large" shape="circle" icon={<PlusOutlined className='icon-add' />} />
+          </Link>
+        </Tooltip>
       </Content >
-      <MenuComponent/>
+      <MenuComponent />
     </Layout >
   );
 };
