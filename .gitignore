@@ -24,4 +24,4 @@ yarn-error.log*
 package-lock.json
 
 #Arquivo de configuração
-/src/service/firebaseConnection.js
+/src/service/firebaseConnections.js
