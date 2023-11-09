@@ -14,10 +14,10 @@ import locale from 'antd/es/date-picker/locale/pt_BR';
 import './styles.css'
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../services/firebaseConnections';
 import MenuComponent from '../../components/MenuComponent';
 import cacto from "../../assets/cacto.png";
-import { db } from '../../services/firebaseConnections';
-import { addDoc, collection } from 'firebase/firestore';
 import { AuthContext } from '../../services/auth';
 
 
@@ -33,10 +33,10 @@ const AddPlanta = () => {
 
   async function handleRegisterPlant(e) {
     e.preventDefault();
-    if (nome != '' && idade != '') {
+    if (nome !== '' && idade !== '') {
       await addDoc(collection(db, "plantas"), {
         nomePlanta: nome,
-        idade: idade,
+        idade,
         userId: user.uid,
         createdAt: new Date(),
       }).then(() => {

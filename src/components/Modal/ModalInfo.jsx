@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal, Image, Row, Col, Button } from 'antd';
 import './style.css';
 import folha from "../../assets/folha.svg"
@@ -39,6 +40,11 @@ const ModalInfo = ({ isOpen, onClose }) => {
       </Row>
     </Modal>
   );
+};
+
+ModalInfo.propTypes = {
+  isOpen: PropTypes.bool.isRequired, 
+  onClose: PropTypes.func.isRequired, 
 };
 
 export default ModalInfo;

@@ -100,7 +100,7 @@ const CatalogoAZ = () => {
             <Title level={4} className='titulo-catalogos' style={{ textAlign: "left" }}>A - Z</Title>
           </Col>
         </Row>
-        {loading ? <Spin tip="Carregando..." size="large" alignitems={'center'} className='loading' /> :
+        {loading ? <Spin tip="Carregando..." size="large" alignitems='center' className='loading' /> :
           <Row className='container_item' style={{ marginBottom: '6rem' }}>
 
             {filteredPlantas.map((item, index) => (

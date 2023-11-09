@@ -7,6 +7,7 @@ import {
   Col,
   Button,
 } from 'antd';
+
 import { useHistory, Link } from 'react-router-dom';
 import './styles.css'
 import { ArrowLeftOutlined, SearchOutlined } from '@ant-design/icons';

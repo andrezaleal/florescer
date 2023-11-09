@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal, Image, Row, Col, Button, message } from 'antd';
 import './style.css';
-import folha from "../../assets/folha.svg"
 import { useHistory, useParams } from 'react-router-dom';
 import { doc, deleteDoc } from 'firebase/firestore';
+import folha from "../../assets/folha.svg"
 import { db } from '../../services/firebaseConnections';
 
 
@@ -11,8 +12,8 @@ const ModalExcluir = ({ isOpen, onClose }) => {
   const { id } = useParams();
   const history = useHistory();
 
-  async function excluirPlantaPorId(id) {
-    const plantaRef = doc(db, 'plantas', id);
+  async function excluirPlantaPorId(idPlanta) {
+    const plantaRef = doc(db, 'plantas', idPlanta);
   
     try {
       await deleteDoc(plantaRef);
@@ -63,6 +64,10 @@ const ModalExcluir = ({ isOpen, onClose }) => {
       </Row>
     </Modal>
   );
+};
+ModalExcluir.propTypes = {
+  isOpen: PropTypes.bool.isRequired, 
+  onClose: PropTypes.func.isRequired, 
 };
 
 export default ModalExcluir;

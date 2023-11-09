@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Typography,
   Row,
@@ -6,7 +7,9 @@ import {
   Image,
   Card,
 } from 'antd';
+
 import './styles.css';
+
 const CardCatalogo = ({ nome, img, card }) => {
   const { Text } = Typography;
   return (
@@ -26,5 +29,11 @@ const CardCatalogo = ({ nome, img, card }) => {
     </>
   );
 }
+
+CardCatalogo.propTypes = {
+  nome: PropTypes.string.isRequired,
+  card: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+};
 
 export default CardCatalogo;

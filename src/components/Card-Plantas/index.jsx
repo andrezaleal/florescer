@@ -7,6 +7,7 @@ import {
   Image,
   Card,
 } from 'antd';
+
 import './styles.css';
 import cactus from "../../assets/cacto.png"
 import cardVerde from "../../assets/crad-medio-verde.png"
