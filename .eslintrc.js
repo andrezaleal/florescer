@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  ignorePatterns: ['**/src/'],
   plugins: ['react', 'react-hooks', 'testing-library', 'prettier'],
   rules: {
     'prettier/prettier': 'warn',
