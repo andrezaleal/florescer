@@ -14,7 +14,7 @@ const ModalExcluir = ({ isOpen, onClose }) => {
 
   async function excluirPlantaPorId(idPlanta) {
     const plantaRef = doc(db, 'plantas', idPlanta);
-  
+
     try {
       await deleteDoc(plantaRef);
       message.success('Sua plantinha foi removida do seu jardim com sucesso!');
@@ -36,18 +36,18 @@ const ModalExcluir = ({ isOpen, onClose }) => {
 
   return (
     <Modal visible={isOpen} onOk={handleOk} onCancel={handleCancel}
-    footer={[
-      <Row style={{ justifyContent: 'center'}}>
-      <Button key="sim" type="text" onClick={handleOk} className='button-modal-confirm'>
-        Sim
-      </Button>
-      <Button key="Cancelar" type="text" onClick={handleCancel} className='button-modal-cancel'>
-        Cancelar
-      </Button>
-      </Row>
-    ]}
-     >
-      <Row style={{ justifyContent: 'center', marginBottom:'1.5rem' }}>
+      footer={[
+        <Row style={{ justifyContent: 'center' }}>
+          <Button key="sim" type="text" onClick={handleOk} className='button-modal-confirm'>
+            Sim
+          </Button>
+          <Button key="Cancelar" type="text" onClick={handleCancel} className='button-modal-cancel'>
+            Cancelar
+          </Button>
+        </Row>
+      ]}
+    >
+      <Row style={{ justifyContent: 'center', marginBottom: '1.5rem' }}>
         <Col>
           <Image
             src={folha}
@@ -59,15 +59,15 @@ const ModalExcluir = ({ isOpen, onClose }) => {
 
       <Row style={{ justifyContent: 'center', textAlign: 'center' }}>
         <Col>
-        <p className='mensagem'>Vamos sentir falta da sua plantinha... Tem certeza que deseja excluir?</p>
+          <p className='mensagem'>Vamos sentir falta da sua plantinha... Tem certeza que deseja excluir?</p>
         </Col>
       </Row>
     </Modal>
   );
 };
 ModalExcluir.propTypes = {
-  isOpen: PropTypes.bool.isRequired, 
-  onClose: PropTypes.func.isRequired, 
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ModalExcluir;

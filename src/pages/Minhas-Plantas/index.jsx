@@ -34,8 +34,6 @@ const MinhasPlantas = () => {
   const [loadPlantas, setLoadPlantas] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const history = useHistory();
-
   useEffect(() => {
     async function loadPlantas() {
       const querySnapshot = await getDocs(userPlantsQuery)
@@ -120,7 +118,6 @@ const MinhasPlantas = () => {
                         <Link to={`/planta-id/${item.id}`}><CardPlanta nome={item.nome} /></Link>
                       </div>
                     ))}
-
                 </>
             }
           </Row>

@@ -94,10 +94,10 @@ const ResultSession = () => {
   }, [currentResponse])
 
   return (
-    <Layout className="layout" >
+    <Layout className="layout margin-page-quiz" >
       <Content className="site-layout-content" style={{ display: 'block', padding: 0 }} >
         <Row className='container_step'>
-          {loading ? <Spin tip="Carregando..." size="large" alignitems={'center'} className='loading' /> :
+          {loading ? <Spin tip="Carregando..." size="large" alignitems='center' className='loading' /> :
             <div>
               <Title className='titulo'>Resultado</Title>
               <Row className='container_step' style={{ padding: '0 15px', textAlign: 'center', alignContent: 'center' }}>
@@ -121,6 +121,7 @@ const ResultSession = () => {
               <Row className='container_step' style={{ alignContent: 'center', marginBottom: '20px' }}>
                 <Col>
                   <Link to='/catalogo'
+                  className='link-catalogo'
                   ><Button
                     type="primary"
                     className='button-catalogo'

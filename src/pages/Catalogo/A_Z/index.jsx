@@ -103,10 +103,10 @@ const CatalogoAZ = () => {
         </Row>
         {loading ? <Spin tip="Carregando..." size="large" alignitems='center' className='loading' /> :
           <Row className='container_item' style={{ marginBottom: '6rem' }}>
-
             {filteredPlantas.map((item, index) => (
               <Col key={index} style={{ marginBottom: '1rem' }}>
-                <Link to={`/planta/${item.id}`}><Card className="card-catalogo-style-card" bordered={false} style={{ color: "FFFFFF", }}>
+                <Link to={`/planta/${item.id}`}>
+                  <Card className="card-catalogo-style-card" bordered={false} style={{ color: "FFFFFF", }}>
                   <img
                     src={item.image}
                     className='img-catalogo-card'

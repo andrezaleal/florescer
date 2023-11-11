@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 
+html{
+    --antd-wave-shadow-color: #EA7E84 !important;
+  }
+
 .titulo {
     color: #6D7970 !important;
     text-align: center;
@@ -24,6 +28,10 @@
 }
 .img-resultado-quiz{
     width: 12rem;
+}
+.margin-page-quiz{
+    margin-top: 10%;
+    padding-bottom: 6rem;
 }
 
 .container_step {
@@ -54,7 +62,7 @@
 
 .button-quiz-enviar-row {
     align-content: center !important;
-    margin-top: 37% !important;
+    margin-top: 20% !important;
 }
 
 .button-catalogo{
@@ -67,6 +75,10 @@
     font-size: 1.2rem;
     margin-bottom: 16%;
 }
+
+.button-quiz-enviar .ant-btn-primary:active  {
+    background-color: #EA7E84 !important;
+  }
 
 .ant-layout {
     background: #F6F6F6 !important;
@@ -89,10 +101,10 @@
     white-space: normal !important;
 }
 
-.card-opcoes:focus-within {
+.card-opcoes:focus {
     background: #75B47B !important;
-    border: solid 1px #75B47B;
-    color: #F6F6F6;
+    border: solid 1px #75B47B !important;
+    color: #F6F6F6!important;
 }
 
 

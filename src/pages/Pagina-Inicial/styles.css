@@ -13,6 +13,7 @@
 .margin-page{
     margin-top: 10%;
     margin-bottom: 22%;
+    padding-bottom: 5rem;
 }
 .text-mini-card{
   font-size: 1rem;
@@ -164,6 +165,7 @@
   justify-content: center;
   width: 100%;
 }
+
 
 @media (max-width: 1080px) {
     .card-mini {
@@ -320,21 +322,23 @@
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) and (max-height:667px) {
     .descricao-card {
         font-size: 0.8rem;
         margin: 0 0 4vh;
     }
 
     .card-style {
-        height: 17vh;
+        height: 20vh;
         padding: 27px !important;
     }
 
     .titulo {
         font-size: 1.6rem !important;
     }
-
+    .card-mini {
+        height: 15vh;
+    }
 }
 
 @media (min-width: 800px) {

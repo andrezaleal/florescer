@@ -135,7 +135,6 @@ const AddPlanta = () => {
                   Adicionar
                 </button>
               </Col>
-
             </Row>
           </form>
         </div>

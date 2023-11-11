@@ -25,7 +25,6 @@ const { Title } = Typography;
 const { Content } = Layout;
 
 const Catalogo = () => {
-  const history = useHistory();
   const [searchText, setSearchText] = useState('');
 
   const cardsData = [
@@ -88,7 +87,6 @@ const Catalogo = () => {
     </Layout >
   );
 };
-
 
 export default Catalogo;
 

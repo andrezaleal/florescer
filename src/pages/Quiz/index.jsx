@@ -121,11 +121,11 @@ const Quiz = () => {
 
   console.log(userResponses)
   return (
-    <Layout className="layout" >
+    <Layout className="layout margin-page-quiz" >
       <Content className="site-layout-content" style={{ display: 'block', padding: 0 }} >
         {loading ? <Spin tip="Carregando..." size="large" alignitems={'center'} className='loading' /> :
           currentQuestion && (
-            <Row className='container_step' >
+            <Row className='container_step margin-page' >
               <Row className='container_step' style={{ justifyContent: 'flex-start' }}>
                 <Col>
                   <Button type='link' style={{ color: '#6D7970' }} onClick={current <= 0 ? () => prev2() : () => prev()}>

@@ -85,7 +85,6 @@ const PlantaId = () => {
   }
 
   useEffect(() => {
-
     loadId(id);
   }, [id]);
 
@@ -97,7 +96,6 @@ const PlantaId = () => {
   const openModal = () => {
     setIsModalOpen(true);
   };
-
 
   return (
     <Layout className="layout margin-page-add-planta" >
