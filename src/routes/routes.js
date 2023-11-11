@@ -73,7 +73,6 @@ export default function Routes() {
               <PlantaId />
             </Route>
           </PrivateRoute>
-
         </Switch>
       </AuthProvider>
     </Router>
