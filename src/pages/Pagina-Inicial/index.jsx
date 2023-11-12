@@ -38,7 +38,7 @@ const PaginaInicial = () => {
   const [plantafavoritada, setPlantaFavoritada] = useState([]);
   const [loadingFavoritos, setLoadingFavoritos] = useState(true);
   const allPlantsMarkBook = collection(db, "catalogo");
-  const userPlantsQuery = query(allPlantsMarkBook, where(documentId(), "in", user.favoritos));
+  const userPlantsQuery = query(allPlantsMarkBook, user.favoritos.length>0 ? where(documentId(), "in",user.favoritos) : where("id","==", user.favoritos));
 
 
   async function handleLogout() {
