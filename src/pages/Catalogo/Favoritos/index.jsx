@@ -35,7 +35,7 @@ const Favoritos = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const allPlantsMarkBook = collection(db, "catalogo");
-  const userPlantsQuery = query(allPlantsMarkBook, where(documentId(), "in", user.favoritos));
+  const userPlantsQuery = query(allPlantsMarkBook, user.favoritos.length>0 ? where(documentId(), "in",user.favoritos) : where("id","==", user.favoritos));
 
   async function loadPlantasMarkBook() {
     const querySnapshot = await getDocs(userPlantsQuery)
