@@ -101,7 +101,7 @@ const ResultSession = () => {
             <div>
               <Title className='titulo'>Resultado</Title>
               <Row className='container_step' style={{ padding: '0 15px', textAlign: 'center', alignContent: 'center' }}>
-                <Text className='text-quiz'>Essa é as plantinha mais adequada para o seu perfil:</Text>
+                <Text className='text-quiz'>Essa é a plantinha mais adequada para o seu perfil:</Text>
               </Row>
               <Row className='container_item'>
                 <Col style={{ textAlign: 'center' }}>

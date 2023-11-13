@@ -23,11 +23,6 @@ const IntroSession = () => {
     setCurrent(current - 1);
   };
 
-  useEffect(() => {
-    console.log('entrei')
-  })
-
-
   const initialSteps = [
     {
       title: 'First',
