@@ -64,7 +64,7 @@ function AuthProvider({ children }) {
         } else if (error.message.includes("wrong-password")) {
           message.error("Senha incorreta.");
         } else if (error.message.includes("auth/invalid-login-credentials")) {
-          message.error("Formatação da senha ou email digitadas de forma inválida!");
+          message.error("Email inválido ou senha inválidos!");
         }
         else {
           message.error("Ocorreu um erro ao tentar realizar o login, por favor tente mais tarde.");
