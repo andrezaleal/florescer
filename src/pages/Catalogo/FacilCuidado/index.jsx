@@ -70,7 +70,7 @@ const FacilCuidado = () => {
 
   return (
     <Layout className="layout" >
-      <Row className='container_item' sstyle={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
+       <Row className='container_item' style={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
         <Col span={8}>
           <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
             <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
@@ -89,9 +89,9 @@ const FacilCuidado = () => {
                 width: '85vw',
                 background: 'none',
               }}
+              onChange={(e) => setSearchTerm(e.target.value)}
               suffix={<SearchOutlined />}
               size="large"
-              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </Col>
         </Row>

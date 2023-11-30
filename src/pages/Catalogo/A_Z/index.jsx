@@ -71,7 +71,7 @@ const CatalogoAZ = () => {
 
   return (
     <Layout className="layout" >
-      <Row className='container_item' sstyle={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
+       <Row className='container_item' style={{ justifyContent: 'flex-start', marginBottom: '2rem', marginTop: '3rem' }}>
         <Col span={8}>
           <Button type='link' style={{ color: '#6D7970' }} onClick={history.goBack}>
             <ArrowLeftOutlined style={{ fontSize: '26px', padding: 0 }} />
