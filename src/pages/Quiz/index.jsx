@@ -78,7 +78,6 @@ const Quiz = () => {
 
   };
 
-  console.log('aqui', currentQuestion);
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -116,10 +115,7 @@ const Quiz = () => {
   useEffect(() => {
     loadQuestions();
   }, [])
-
-  console.log(current, questions.length);
-
-  console.log(userResponses)
+  
   return (
     <Layout className="layout margin-page-quiz" >
       <Content className="site-layout-content" style={{ display: 'block', padding: 0 }} >

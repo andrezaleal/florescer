@@ -67,11 +67,11 @@ const ResultSession = () => {
         let maior = 0;
         let similar = -1;
         const result = resultadosData.map((res, index) => {
-          const oi = res.map ? res?.map.filter((m, i) => {
+          const q = res.map ? res?.map.filter((m, i) => {
             return m == currentResponse[i]
           }) : []
-          similar = oi.length > maior ? index : similar,
-            maior = oi.length > maior ? oi.length : maior;
+          similar = q.length > maior ? index : similar,
+            maior = q.length > maior ? q.length : maior;
         });
         if (similar >= 0) {
           setResultado(resultadosData[similar]);
